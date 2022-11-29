@@ -1,2 +1,3 @@
 # public_notes
- Notes on Books, Videos, etc
+
+Notes on Books, Videos, etc

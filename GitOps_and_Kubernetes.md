@@ -1,0 +1,432 @@
+# GitOps and Kubernetes
+
+## Background, Kubernetes and GitOps
+
+- Docker: Solved packaging and isolation of individual applications
+- k8s: Solves how multiple apps work in a distributed system: How containers communicate; how traffic is routed between containers; how containers scale up for additional load; How does the cluster scale up to accommodate additional / larger containers?
+- k8s Basics
+  - Primary:
+    - Pod: A group of containers deployed together on the same host. The smallest deployable unit on a node. Includes ways to mount storage, set env vars, etc.
+      - All containers of a single Pod share the same network address, port space, optionally file system.
+    - Service: A logical set of pods and policy to access them.
+    - Volume: A directory accessible to containers in a pod.
+  - higher-level resources:
+    - ReplicaSet: Defines that a number of identical pods should be running. If a pod terminates, a new one will spin up to the ReplicaSet defn.
+    - Deployment: Declarative update for Pods and ReplicaSets.
+    - Job: Creates one or more Pods that run to completion.
+    - CronJob: Creates Jobs on a time-based scjed.
+  - Namespaces
+    - Namespace: Naming scope in which resources must be unique. Most resources belong to a single Namespace.
+    - Enable isolating users and apps via RBAC, network policies, resource quotas => Cluster can be multi-tenant without impacting each other. Allow defining application envs.
+  - Control plane(s): monitor cluster state, make changes, schedule work, responds to events
+    - kube-apiserver: REST api to evaluate and update desired cluster state
+    - kube-controller-manager: Daemon that monitors shared cluster state through the kube-apiserver; makes changes attempting to move current state toward desired
+    - kube-scheduler: responsible for scheduling workloads across nodes in the cluster
+    - etcd: key-value db often used as k8s backing store for cluster config data
+  - Nodes: Worker machines that run processes allowing them to be managed by the cluster
+    - kubelet: primary node agent that manages actual containers on a node
+    - kube-proxy: Network proxy reflecting Services as defined in the k8s API on each note. Can do simple TCP, UDP, SCTP stream forwarding.
+- Running a Pod
+  - Once created, k8s looks at `spec` field and attempts to send the containers to a node. Progress is reported via `status`(e.g., via `kubectl get pods`) => Running. To debug not running, `kubectl describe pod`.
+  - Pods aren't accessible from outside the cluster by default - Can solve this via k8s services, ingress, etc. Locally, `kubectl port-forward` can work.
+  - `kubectl exec`, `kubectl exec -it <podname> -- /bin/bash` to get a shell.
+  - `kubectl delete` to delete a pod
+- `kubectl`: cli tool use dto manipulate k8s objects imperatively(e.g., for debugging or break glass)
+  - `create`, `scale`, `annotate`, etc.
+  - `apply`: takes a path to a resource manifest
+    - Resource doesn't exist? Create it.
+    - Resource exists? Diffs and replaces fields that have changed, because Deployment controller may have populated a number of additional fields that we don't want to lose.
+    - Gotchas
+      - Don't mix imperative commands(`kubectl edit`, `kubectl scale`) with declarative management, else current state won't match `last-applied-configuration` and the merge algo will get confused. If you make changes via `kubectl edit`, be prepared to roll them back by hand before getting back to declarative config.
+      - Removing declarative fields in favor of another manager(e.g., removing `replicas` in favor of the Horizontal Pod Autoscaler): A field that is removed may still exist in `last-applied-configuration` -> The missing field will be seen as a deletion -> the value set by the external manager will be removed during the manifest diff.
+  - `rollout restart`: Triggers all Pods of a deployment to restart(e.g., for dev/test where the image tag has been overwritten  and redeploy desired). Injects an arbitrary timestamp in the Pod template metadata annotations -> `spec` is changed -> rolling update.
+- k8s Controllers
+  - Parse resource manifests, execute work to make system state match desired.
+  - Generally, one controller per resource type, which listens to API for changes on that type.
+  - Delegation
+    - k8s enables a resource hierarchy: higher-level resources providing some fixed functionality can manage other higher-level or primary resources.
+    - e.g., Pod controller: Focused on running an instance of an app via its container(s). ReplicaSet focuses on running multiple pods, but delegates responsibilities for containers within those pods to Pod Controller. Deployment Controller leverages ReplicaSet functionality to implement deployment strategies like rolling updates.
+  - Controllers have different functionality but same pattern: Each controller runs a loop, every iteration reconciles state(where desired state is the `spec` field of the resource manifest; and actual state is available via the `status` field).
+  - Operators: App-specific controllers extending the k8s API to manage stateful instances. Builds on resource + controller concepts to include domain or app-specific knowledge.
+    - All Operators follow controller loop pattern, but not all Controllers are Operators.
+    - Generally, Controllers manage lower-level, reusable k8s resources; Operators operate at a higher level and are app-specific. e.g, Controllers manage Deployments, Jobs, Ingresses, cert-manager, Argo workflow(introduces a new workflow resource), etc; but there is a Prometheus operator that manages Prometheus database installations.
+- General gotchas
+  - Do not reuse image tags(e.g., latest) in Prod: A second build would fail to change, as the internal spec would ref the same `latest` tag, thus would not deploy/apply. Rollback to an older version is more difficult or impossible. In dev/test scenarios, may be ok, as may prevent cluttering up disk or image tags.
+
+## Patterns and Processes
+
+### Environment Management
+
+- Environment: where code is deployed and executed(e.g., local, QA, E2E, etc). Code, deps, and runtime are packaged into the docker image, etc.
+- Namespace management
+  - Natural fit for environments, as they encapsulate unique resource naming; resource quotas; RBAC; isolation; network configuration; etc.
+    - Example: QA, E2E, Stage/Prod West, Stage/Prod East where QA and E2E are pre-prod cluster with open access to a relevant team; but the Stage/Prods are Production cluster with restricted access.
+  - May contain pods for addl functionality required by the end along with application pods.
+  - May have dedicated network/hardware policies(e.g., a cpu-hungry app can deploy to a namespace with many cores; or i/o heavy to one with faster underlying i/o).
+- Network Isolation
+  - By default, all Namespaces can connect to services running in other Namespaces(including e.g., QA <-> E2E <-> Staging). Control via egress/ingress rules(`NetworkPolicy`).
+  - At minimum, even with namespace / network isolation, recommend separating Production from others so that accidental impacts are minimized.
+  - In AWS, can create separate VPCs for the environments as a logical boundary; and host those VPCs in separate accounts.
+- Git
+  - Keep manifests separate from app source code:
+    - Allows modifying the manifest without triggering the full CI pipeline
+    - Cleaner audit log
+      - n.b. easily addressable via folder history
+    - For apps composed of multiple services from multiple repos, may be hard to choose which one hosts(?)
+    - If app devs are not the ones who should be pushing to higher envs, separate repo can be locked to specific team members.
+    - In an automated CI pipeline, it's possible that pushing manifest changes to the repo triggers infinite loop of build jobs and git commit triggers(?)
+  - Branch strategy
+    - Single branch, many directories: `main` contains the exact config for each environment, composed of a base env default and overlays on that for env-specific details. Each env is a sub-directory. Supported by e.g., Kustomize.
+    - Many branches: Each branch is an environment, where the branch will have the exact spec for an env without using something like Kustomize. Each branch will also have specific commit history for rollback. However, no common "default" config to overlay on, so repetition.
+  - Multi-repo vs Mono-repo if keeping separate
+    - Starting out, mono may be fine; scaling will make multi more attractive in terms of different team cadence and release / rollback processes.
+  - Kustomize
+    - Bundled with kubectl by default
+    - No parameters or templates
+        - Pro: Easy to reason about the app since overlays are simply subsets of k8s yaml.
+        - Cons: Some use cases may be more difficult, like setting an image tag for custom resources here instead of in Deployment. No vars / parameters makes this impossible.
+  - Jsonnet
+    - Language, not a tool. Json templating with conditionals, comments, etc; more appealing than go/jinja2.
+    - Pros: Powerful, as this is a more fully-formed language than templating too.
+    - Cons: A non-trivial Jsonnet file may need to be run to verify its correctness(?)
+- Configuration Management
+  - Helm
+    - Self-described package manager, not config management even though it's often used that way.
+    - Per-environment `values.yaml`(e.g., `values-base`, `values-prod`, etc), with a parameterized chart that uses env-specific. Tends to lead to many if/else switches since templating is "flat".
+    - Pros: Helm has a great chart repository for many needs(e.g., `redis-ha` => pain-free reliable Redis on k8s)
+    - Cons
+      - Go templates are difficult to read
+      - In SaaS CD, if existing chart params can't support desired manifest changes, must build a new chart -> bump its version -> push it to a repo -> Redeploy with Helm upgrade.
+      - May be non-declarative: e.g., adding `--set param=value` is only captured in the Helm ConfigMap, so recreating is difficult. Can move them to a separate custom values.yaml, but annoying when trying to deploy an off-the-shelf chart from stable and don't have somewhere obvious to store that custom file alongside the chart.
+- Durable vs Ephemeral envs
+  - Durable: always available(e.g, Prod, maybe E2E); Ephemeral: Spin up for testing, blow it away after.
+
+### Pipelines
+
+- Stages in CI/CD Pipelines
+  - GitOps CI: CI pipeline updates app manifest with new image version after build/test
+  - GitOps CD: GitOps operator monitors manifest changes and orchestrates deployment
+  - Why GitOps CI/CD
+    - Productivity: Dev feedback loop must be fast
+    - Security: Vuln detection
+    - Defect escape: Unit tests, functional tests
+    - Scalability: Enable canary releases for more confidence in deploys
+    - Time-to-market: Lower cycle time
+    - Reporting: Metrics from the pipeline
+  - Tools of the pipeline
+    - Vulnerabilities: Nexus, etc
+    - Static analysis: SonarQube, etc
+    - Some mechanism to cache downloaded deps to avoid long-running pulls on every build
+    - Docker build, tagged via git hash(or something else), pushed to a registry(e.g., ECR)
+  - Additional GitOps CI steps
+    - Manifest updates: Need to update the manifest with the newly created image id(e.g., using Kustomize)
+    - Publish metrics / notifications: Build issues(failed builds, failed tests); run time; coverage(if desired); compliance reqs, if any
+  - Additional GitOps CD steps
+    - Manifest diff: Determine delta; if no delta, stop.
+    - kubectl apply
+    - Possibly post-deploy integration testing
+    - Possibly post-deploy runtime vuln checks(e.g., injection may be detected post)
+    - Publish metrics: Runtime failures, integration failures, vulns
+    - Compliance reqs if needed(e.g., release ticket)
+- Promotions
+  - Where do we store app config?
+    - Docker image: Bundled right in, new environment needs a full build.
+    - `ConfigMap`: Stored in built-in k8s `etcd`. Pods need to be restarted if updated.
+    - Config repo: Similar to `ConfigMap`, but Pod can pick up changes dynamically
+  - Code and Image Promotion
+    - Branching Strategies
+      - Single: All feature branches merge to `main` -> All `main` images are deployable. Roll backs by deploying older images.
+      - Multibranch: More typical for multi-project. `features` -> `develop` -> `release` -> `main`. `main` can go to prod; `develop` only to lower envs.
+  - Environment promotion
+    - Rollback: Still controlled by git via revert(or reset, but reset frowned on for compliance and scale)
+  - Compliance pipeline: Ensures that deployments are approved and record who/when/what is in release.
+
+### Deployment Strategies
+
+- Basics
+  - ReplicaSet: A stable set of Pods to run at any given time, defined by a selector => Pod identity, number of replicas to maintain, PodSpec
+    - Not declarative, so not desirable for GitOps(e.g., if you deploy RS with 2 Pods, update the image in the manifest, apply the new manifest, update the `replicas` to 3, apply => 2 pods on original image, one pod on new image because ReplicaSet only ensures the number of running Pods)
+  - Deployment leverages one or more ReplicaSets in a declarative way
+    - Rolling updates for zero downtime
+    - Creates one ReplicaSet per image id and set the number of `replicas` to the desired value; other ReplicaSets will have `replicas` set to 0, terminating non-matching image id Pods
+    - Rolling Update Strats
+    - Default: Deployment ensures +/- 25% limits: at least 75% of the desired total Pods are up(i.e., 25% `maxunavailable`); at most 125% of the desired total Pods are up(i.e., 25% `maxsurge`)
+    - If you have a target of 3, set `maxunavailable` and `maxsurge` to 3, and change the image id, you will see the in-service image id drop in tandem, replaced by 3 of the new image id.
+  - Traffic Routing
+    - Service defines a logical set of Pods and a policy for access, with the targeted set of Pods determined by a selector within the Service manifest. Service then fwds traffic to Pods that match selector using round-robin load balancing.
+    - nginx Ingress Controller can perform TLS termination, URL rewrite, arbitrary load balance using custom rules
+    - Istio Gateway intercepts incoming/outgoing connections at the k8s cluster edge. Defines a set of ports, protocol, custom routing.
+  - Argo Rollouts: Provides a Rollout custom resource with feature parity to Deployments resource + blue-green, canary, etc strategies
+  - Blue-Green
+    - Two deployments fully scale, but traffic only hits one of them
+    - Requires something above the k8s Service(e.g., nginx), as Service only manipulates iptables and doesn't reset existing Pod connections
+    - via Deployment rolling updates: Simply change nginx(or other) ingress rules to point from the `blue` service to the `green`. When finished, scale down blue.
+      - Native, but ideally this will need some additional process / automation around bleeding previous traffic, automatically scaling down blue, enabling more complex deployment strategies
+    - via Argo Rollouts
+      - Baked-in support for Blue-Green, Canary, fine-grained traffic weighting, automated rollbacks, etc
+      - Logical defaults: One ReplicaSet for blue, another for green, and Rollout will ensure that green is fully scaled before updating Service selector to point all trafic there; and will wait 30s(configurable) before scaling down blue.
+  - Canary
+    - Blue-green, but with traffic % management
+    - via Deployment: Can deploy single green -> direct 10% using nginx -> scale up green -> direct 100% using nginx -> scale down blue
+    - via Argo Rollouts: similar to above, but Rollout has a `weight` and `pause duration` and manages nginx there
+  - Progressive Delivery
+    - Automated canary deployment - Instead of monitoring for a fixed duration before promotion, continuously monitor and scale up to full
+    - via Rollouts: k8s doesn't provide tooling to determine "correctness" of a new deployment. Rollouts does via `AnalysisTemplate`. No need for multiple Services since Rollouts manages multiple ReplicaSets.
+
+### Access Control and Security
+
+- Intro
+  - Traditionally, Security manages the whole thing. GitOps _can_ enable devs to contribute more actively via k8s access configs and git workflows that enforce proper process.
+  - Access control: Limits access to physical or virtual resources.
+    - Authentication: "I am who I say I am"
+    - Authorization: "I can do what I'm trying to do"
+  - Balancing Security with UX: Determine potential attack vectors; worst-case impact; existing perms; automated protection to mitigate risk.
+  - CI/CD Risk: Compromising CI/CD could enable IP exfiltration, delivery of harmful software to environments(for data exfiltration, etc), etc.
+  - Container Registry Risk: Pulling from untrusted registries could introduce harmful software to environments; malicious push to trusted registry could do the same(e.g., by overwriting a previous trusted image - can mitigate using immutable image tags).
+  - Repository Risk: Manifests define resources, giving access to nearly all aspects.
+  - Cluster Risk: Gives access to nearly all aspects.
+- Access Limitations
+  - Git: git serves as an audit log, and a specific hash ensures untampered history pointer. Can generally enforce reviewer(s). Can generally enforce automated checks / scans.
+  - k8s RBAC
+    - It's expected that CI pipeline will not access k8s cluster
+    - ABAC: Attribute-based access control, or policy-based, drives rights via policies that combine attributes. Very powerful, can be hard to understand and use. Initially was used in k8s.
+    - RBAC: Role-based via Subjects, Resources, Verbs.
+      - Subjects: User and ServiceAccount resources
+      - Resources: Regular k8s resources like Pod or Deployment
+      - Verbs: Role and RoleBinding resources
+  - Useful to slice by namespace so that teams' changes are isolated from others.
+  - Devs may manage Deployments, ConfigMaps, Secrets, but things like NetworkPolicy ought to be locked.
+  - Registry images should only be allowed from safelisted sources.
+    - Registry should be private for sensitive companies / products.
+    - Use an Open Policy Agent and Admission hook to reject manifests referencing images from untrusted registries
+  - Cluster-level resources should live in git
+    - Normal to package application defn with required access settings -> since access settings are managed by resources, they can create a potential backdoor delivered by the operator. Mitigate by ensuring that operator can only manage appropriate resources(e.g., not ClusterRoles, or sliced by team)
+- Patterns
+  - Devs shouldn't need direct k8s access since everything is driven through git(e.g., only Deployment repository; or only app repository once Deployments are stable - requires full automation for Deployment repository - which now is only open to the automation user - and k8s cluster)
+
+### Secrets
+
+- Built-in k8s Secrets
+  - Name + Type(Optional) + map of encoded name value(e.g., username: base64a, password: base64b)
+    - Not encrypted, just base64
+  - Can be mounted as file volume within a pod(enables dynamic updates, as files will be updated when underlying secret changes); set as env vars within a pod(less secure as accessible to all apps and can't be updated without a pod restart); or accessed via k8s api(Pods must have access privs to retrieve secret)
+  - Secret types
+    - Opaque: Default type. Arbitrary data.
+    - kubernetes.io/service-account-token: Token that identifies a service account to k8s api. Requires data["token"].
+    - kubernetes.io/dockercfg: Serialized ~/.dockercfg file. Requires data[".dockercfg"] .
+    - kubernetes.io/dockerconfigjson: Serialized ~/.docker/config.json file. Requires data[".dockerconfigjson"].
+    - kubernetes.io/basic-auth: Basic username/password. Requires data["username"], data["password"].
+    - kubernetes.io/ssh-auth: Private ssh key. Requires data["ssh-privatekey"].
+    - kubernetes.io/tls: TLS private key and cert. Requires data["tls.key"], data["tls.crt"].
+  - Flaws
+    - No encryption
+    - git is all-or-nothing per repo, and distributed vcs -> proliferation of secrets
+    - No encryption-at-rest by default
+    - Removing a secret from git once committed is very hard
+- Secret Strategies
+  - In git: Nah
+  - In base container image(e.g., by inserting a file with sensitive data): Removes `git` and `k8s` from the app process, but exposes sensitive data to anybody with access to the image; slows down secret updates(have to rebake image and let it go out); hard to deal with e.g., multiple environments
+  - Out-of-band: Everything except k8s secrets managed in `git`, secrets are deployed via separate process(e.g., secrets in database) => manual or separate `kubectl apply` to deploy the secret into the cluster. Requires a completely separate deploy process for those secrets.
+  - External: e.g., Vault, AWS Secrets Manager, etc. Application retrieves secrets at startup.
+    - Harder(impossible?) to use k8s conveniences like setting secrets to an env var or mapping them as a file volume
+    - If not storing values in `git`, audit history problems, etc
+  - Encrypting secrets in `git`: e.g., SealedSecrets. Only sensitive key(s) are those used for encryption/decryption.
+- Tooling
+  - Vault
+    - Apps use a sensitive token to auth to Vault: You can do this manually but the point of execution will need that token. Apps/containers need to be "Vault-aware" to provide secrets.
+    - Vault Agent Sidecar Injector: Sidecar that modifies Pods(decorated with certain annotations) to securely retrieve annotated Secret refs, render them into a shared volume. Pod containers read from generic volume, no Vault awareness.
+      - Works via Mutating Admission Webhooks: Http callbacks that intercept admission requests and modify the object:
+        - A workload resource(Deployment, Job, etc) is deployed to the cluster, creating a Pod.
+        - During creation, the k8s API invokes a mutating webhook to the sidecar, which modifies the Pod by injecting an `init` container(and, optionally, a sidecar)
+        - `init` container securely calls Vault to retrieve the Secret, writes it to a shared memory volume, and shares it with app container
+        - App container retrieves the secret from the shared vol
+      - Annotations
+        - `vault.hashicorp.com/agent-inject`: "true"
+          - The sidecar injector ought to act on this Pod
+        - `vault.hashicorp.com/agent-inject-secret-hello.txt`: secret/hello
+          - The key to inject(`secret/hello`) and where to inject(`/vault/secrets/hello.txt`)
+        - `vault.hashicorp.com/role`: app
+          - The vault role used when retrieving the secret
+  - Sealed Secrets
+    - Encrypted git secrets -> Decrypted in cluster
+    - Includes a controller and cli for automation
+    - k8s pieces
+      - CustomResourceDefinition `SealedSecret` which will produce a `Secret`
+      - Controller within the cluster that decrypts `SealedSecret` and provides a normal `Secret`
+      - cli `kubeseal` to enrypt sensitive data into a `SealedSecret` for storage in git
+    - Flow: `kubeseal` secret into a `SealedSecret` -> commit to git -> deploy as any other resource -> `sealed-secrets-controller` decrypts the data into a `Secret` -> Consume the same as any other `Secret`
+      - Be wary of `--from-literal` as shell may store history of commands. Consider `--from-file`.
+    - Sealing without cluster access
+      - Default -> `kubeseal` uses the cert of `sealed-secrets-controller`, meaning it needs access to read that cert.
+        - You can pass cert in using `--cert` if you have it locally or via url
+    - `SealedSecret` by default has a Namespace while the corresponding `Secret` doesn't, meaning the sealed is less portable. This is by design: _Strict scope_ encrypts the secret such that it can only be used in the namespace for which it was encrypted - An attacker can't deploy a `SealedSecret` from one Namespace into one to which they have access in order to view sensitive data.
+      - If not necessary, can relax scope using `--scope cluster-wide` on `kubeseal`. Resulting `SealedSecret` can be deployed to and decrypted in any cluster namepsace.
+    - Encryption key for `SealedSecret` is per-cluster(i.e., the cluster `sealed-secrets-controller` is the signor), so the `SealedSecret` object varies per-cluster as well.
+  - Kustomize Secret generator plugin
+    - Plugin allows Kustomize to invoke user-defined logic to generate or transform k8s resources during build. A plug could reach out to an external store; decrypt; etc. Lots of flexibility along this route.
+      - `exec` plugins - simple executable that accepts a path to the yaml configuration file as its ownly arg; or Go plugins, written in Go.
+    - `kustomize build` is often the last step before the actual deployment of the rendered manifests, so provides an opp to retrieve a secret if you don't want it in git.
+
+### Observability
+
+- Measures of what changes need to be made and whether they achieved the desired results.
+- Logging: Must capture log output from running Pods(typically via stdout)
+- Metrics
+  - Barebones provided by optional component `metrics-server`
+  - App-level can expose a metrics endpoint for collection
+- Tracing
+- Visualization
+  - k8s has a built-in dashboard, k8s Dashboard
+- Critical Observability
+  - App health: Are apps running correctly; how does a newly deployed version perform compared to the older.
+    - Resource Status: Are resources `initialized` / `not ready`, or in another undesireable state?
+      - e.g., pod phases
+        - `pending`: k8s has accepted the Pod but one or more images haven't been created
+        - `running`: Pod has been bound to a node and all containers created
+        - `succeeded`: All containers have terminated and won't be restarted
+        - `failed`: All containers have completed, at least one has terminated in failure(non-zero exit code or terminated by system)
+        - `unknown`: Unable to get Pod state, perhaps because unable to communicate with Pod's host
+      - Pod conditions
+        - `PodScheduled`: Pod has been scheduled to a node
+        - `Initialized`: `init` containers have started successfully
+        - `ContainersReady`: all containers in the Pod are ready
+        - `Ready`: the Pod can serve requests, should be added to load-balancing pools for matching services
+    - Readiness and "liveness"
+      - Pod must notify k8s that it is "ready" based on app-specific logic
+      - Each container in a Pod can specify a readiness probe(either a command or http request) that indicates when the container is `Ready`. When all probes are `Ready`, then the Pod is `Ready` and can be added to load balancers.
+      - Each container can specify a liveness probe to indicate whether the container is alive. k8s uses this to know when to restart a container that has entered a bad state.
+- GitOps Observability
+  - Signals
+    - Latency: Time to deploy and sync state to desired state
+    - Traffic: Deployment frequency, # in progress
+    - Errors: The number of deployments that failed, current number of deployments in failed state; number of out-of-sync deployments where running state doesn't match desired state
+    - Saturation: Length of time a deployment has been queued
+  - App sync status: Whether running state matches desired state(git state)
+    - There will always be a bit post-commit where the states aren't synced
+    - `kubectl diff` will read out the diff, very detailed...
+      - `kubediff`, another tool will output a more concise report
+  - Configuration drift: Has app config been changed outside of git(manually, imperatively)?
+    - e.g., because a user manually ran a `kubectl edit`
+    - Note: What about break glass scenarios, where it wouldn't be desirable to self-heal until a later time?
+  - Change log: What changes have been made, when, and by whom?
+    - Captured in git
+
+## Tools
+
+### Argo CD
+
+- Argo CD: GitOps operator. Also has a larger product suite: Workflows, Rollouts, and Events.
+  - Use cases
+    - At scale, unlikely the org benefits from running too many clusters and having individual teams manage them. However, teams need freedom to manage workloads within those clusters.
+    - Argo is available as a service and integrates well with SSO
+    - Argo builds on k8s RBAC and simplifies management across many clusters
+    - Argo provides a friendlier UX to anser developer questions:
+      - Is the app in sync with git state?
+      - If not, what doesn't match?
+      - Is the app up and running?
+      - If not, what's broken?
+  - Core concepts
+    - Application: Provides a logical grouping of k8s resources and defines a resources manifest's source(e.g., repo url) and destination(e.g., k8s api url, cluster namespace)
+      - Generally the repo will include multiple dirs, one per environment. Argo is tool-agnostic, can support e.g., Helm + Kustomize.
+      - Represents an env deployed in k8s and connects it to the desired git state
+      - Sync status: Whether the observed app resources match git(equivalent to e.g., `kubectl diff`)
+      - Health Status: Aggregated info about observed health of each resource that defines app. Different per resource. The aggregated status it he WORST status of every resource.
+        - Healthy: e.g., requested number of Pods are running and pass both readiness and liveness probes
+        - Progressing: A resource that isn't healthy but is expected to become so within `progressingDeadlineSeconds`
+        - Degraded: e.g., a Deployment that couldn't reach a healthy status within timeout
+        - Missing: A resource stored in git but not deployed
+    - Project: A logical grouping of Applications(e.g., to isolate teams from each other and fine-tune access controls)
+      - Restricts which k8s clusters and repositories might be used by Project Applications
+      - Restricts which k8s resources can be deployed by each Application within a Project
+    - Architecture
+      - Simplest operator would be `kubectl diff` and `kubectl apply`, but falls apart when accounting for many teams and managing configuration of many clusters. Three phases, each managed by a separate Argo CD component:
+        - Retrieve resource manifests: `argocd-repo-server`
+          - Since it's time consuming to download the whole repo every time we need manifests, Argo CD caches repo content on local disk and uses `git fetch` to get recent changes
+          - Since each tool(e.g., Helm or Kustomize) consumes additional resources, Argo CD allows the user to limit the number of parallel manifest generations and scale up the number of `argocd-repo-server` instances
+        - Detect and fix deviations: `argocd-application-controller`
+          - Controller loads the live k8s cluster state, compares it with the manifests from `argocd-repo-server`, and patches.
+          - Controller maintains a lightweight cache of each cluster and updates it in the background using the k8s watch api. The cache allows quick reconciliation to enable it to scale to many clusters.
+          - After reconciliation, the controller has info about each app resource including sync and health status. Controller sves that info to Redis for later presentation.
+        - Present results to end users: `argocd-api-server`(`argocd-server`?)
+          - Stateless web app that loads reconcilation info and powers the UI.
+- Deploying an App with Argo: Describes hands-on steps to deploy via Argo
+- Argo Features
+  - Resource manifest syncing via diffing git state vs active
+  - Resource hooks: Run custom scripts inside the cluster during the sync process
+    - A resource manifest stored in the repo with the `argocd.argoproj.io/hook` annotation
+    - Execute inside the cluster(no need to grant cluster access from CI)
+    - Phases
+      - Pre-sync: Prior to manifest apply
+      - Sync: After pre-sync hooks execute successfully, at manifest apply time
+      - Skip: Indicates to skip the apply entirely
+      - Post-sync: After all sync hooks complete successfully _and_ apply succeeds _and_ all resources are healthy
+      - Sync-fail: When the sync operation fails
+    - Appear as regular resources in the Aplication resource tree
+      - Can customize a deletion policy
+  - Post-deployment verification
+    - Verification more naturally belongs to CI / other tooling because GitOps deploys are async: Post-commit, changes must propagate to the cluster _and_ become healthy, perhaps taking several minutes before you can start tests.
+    - `argocd app wait`: Monitors app status, exits after synced and healthy. Once exited, can assume you're ready for e.g., smoke testing.
+- Enterprise Features
+  - SSO: SAML, OIDC, OAuth
+  - Access Control: Even after SSO granted, the application list will be empty because new users won't have permissions
+    - Solved via Argo's RBAC
+      - Role: Allow/deny actions on an Argo CD object. `p, subject, resource, action, object, effect`
+        - p: RBAC policy line
+        - subject: a group
+        - resource: an Argo CD resource type(clusters, projects, applications, repositories, certificates, accounts)
+        - action: action name to execute against a resource(get, create, update, delete, *)
+        - object: identifies a specific resource instance, or *
+        - effect: whether the role grants or denies
+        - e.g., 
+```
+p, role: developer, applications, *, */*, allow
+g, role: developer, role: readonly
+g, olo-bret, role: developer
+```
+      - Group: A set of users, matching OIDC
+        - User -> OIDC authentication -> User JWT token containing user identity + token claim metadata
+          - the JWT must be included with every Argo request -> Argo extracts applicable user groups from a list of token claims, uses that to verify user permissions.
+      - Declarative management: Argo RBAC, SSO, Apps, Projects can all be managed via gitops
+
+### Jenkins X
+
+- Pretty completely abstracts away any need to understand k8s
+- vs. Jenkins: Treat them entirely separately, as the differences are extreme
+- `Prow`
+  - Receives git webhooks on commit to trigger actions(e.g., rerun tests, merge a PR, assign a reviewer, etc)
+  - Serves as entry point to the cluster
+  - Also reports build status back to git
+- `Tekton`: k8s-native CI/CD system
+  - Tekton is low-level, meant to be wrapped via yaml to be read by the pipeline operator
+
+#### Rest omitted as not relevant
+
+### Flux
+
+- Focused on automated manifest delivery to k8s cluster - Low complexity because it aims to do something very focused
+- No additional layers on top of k8s(e.g., applications, access control). Typically runs inside the managed cluster and uses k8s RBAC.
+- One Flux instance : One k8s cluster. One git repository to represent cluster state
+  - Can also use on Flux instance per namespace
+- Flux generally intended to be maintained by the k8s end user(in contrast to Argo, which provides gitops functions as a service)
+- Offers Docker Registry Scanning
+  - Auto-update images in the deployment repo when new tags are pushed to registry(instead of dev commit -> new image, _then_ must do another commit to in the deployment repo that points at new tag)
+    - However, because of this new images must be well-tested prior to entering the pipeline, lest it auto-deploy further than desired with a bug
+  - Flux image tag updates can operate on SemVer(e.g., auto-deploy minor/patch tags, but manually deploy major versions)
+- Architecture
+  - Dameon: Clones repo, generates manifests, propagates changes into k8s, scans Docker registry. Must be only one instance running. 
+  - Memcached(Optional unless using Registry scanner): Caches discovered images
+- Example: Simple App Deployment
+  - `fluxctl`: cli into Flux, including installation and configuration
+  - If automated repo update desired, likely to need to grant Flux repo write access(e.g., via a Deploy ssh key)
+  - Observing app state
+    - `fluxctl list-workloads`, `fluxctl list-images`
+  - Upgrading deployment image
+    - If auto is desired, requires annotation `fluxcd.io/automated: 'true'`
+  - Using Kustomize for manifest generation
+    - Flux doesn't integrate with tooling: Provides a generator command that invokes the tool instead. 
+  - Securing deployment via GPG
+    - Integrated out of the box: Supply a valid key via configmap, enable commit verification
+- Flux Multi-tenancy
+  - Cluster users have Namespace-limited access and cannot create new Namespaces or cluster-level resources.
+    - Don't need a single git repo in this case, as teams could manage their resources independently
+    - Teams rely on Flux to manage the Application resources; Cluster maintainers rely on it to provision Namespaces and Namespace-level Flux instances.

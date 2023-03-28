@@ -1,0 +1,570 @@
+# Working Backwards
+
+## Intro
+
+- On success, via Bezos: "We have an unshakeable conviction that the long-term interests of shareowners are perfectly aligned with the interests of customers."
+- 14 Leadership Principles: Bar Raiser hiring process that ensures that the company continues to acquire top talent; a bias for separable teams run by leaders with a singular focus that optimizes for speed of delivery and innovation; the use of written narratives instead of slide decks to ensure that deep understanding of complex issues drives well-informed decisions; a relentless focus on input metrics to ensure that teams work on activities that propel the business. And finally there is the product development process that gives this book its name: working backwards from the desired customer experience.
+- the Amazon motto, “Work hard, have fun, make history.”
+- On coaching / preparing others to interact with Bezos: I was often asked, “How do you think Jeff will respond to this idea?” My standard answer was, “I can’t predict what he’ll say, but these are the principles that typically inform his response.…”
+- On experimentation: “We need to plant many seeds,” [Bezos] would say, “because we don’t know which one of those seeds will grow into a mighty oak.” It was an apt analogy. The oak is one of the sturdiest and longest-living trees in the forest. Each tree produces thousands of acorns for every one tree that eventually rises to the sky.
+- On needing Amazon funding and resources + Bezos(“But you had a lot more resources and money, not to mention Jeff Bezos. We don’t.”): Amazonian is a flexible mindset. The elements can be taken as needed, then tweaked as conditions warrant. Elements can be adopted regardless of company size.
+
+## Part 1: Being Amazonian
+
+- Introduce the crucial principles and processes behind being Amazonian
+
+### Building Blocks
+
+- Bezos, a hedge fund manager, reads about internet growth forecast, quits job, writes his book e-tailer biz plan and moves West
+- In early days, in a small office, Bezos begins to instill his principles: Customer obsession, unrelentingy high standards. Emails, packaging, all under the same rule: "It has to be perfect", as one bad customer experience can undo much accum good will.
+  - Bezos loosened his grip as teams built trust(e.g., by producing a media response that was completely up to his standards)
+- Underpromise, overdeliver: Advertise USPS first-class, ship Priority, call it a complimentary upgrade.
+- “When I interview people I tell them, ‘You can work long, hard, or smart, but at Amazon.com you can’t choose two out of three.’”
+  - Early employees worked 60+hrs / week
+- In first years, Bezos could reinforce his message directly to his small leadership team; take part in all decisions, big or small; formulate and apply principles. As company grew to 500+, Bezos could no longer take part in all leadaership hiring and instilling values into them.
+- Amazon leadership principles are deeply ingrained in every function and process - New Amazonians go through a multi-month period of learning and adapting to these methods. Consistency of application(to meetings, documents, decisions, interviews, performance reviews, etc) makes following them second-nature over time. When somebody deviates, it's obvious and easy to challenge in the moment.
+- Late 90's: List of core competencies -> 2004: Observation of inexperienced leader needing training, thus requiring a succinct description of what leadership meant at Amazon _before_ creating the program -> 2005 rollout of 10 principles to all managers, where each principle captured Amazonian ways of thinking and speaking
+  - Person tasked with creating program interviewed effective leaders who embodied the essence of the company over nine months.
+  - Some principles were entirely based on a single leader's activities: Insistence on data-driven -> Dive Deep
+  - Program designer met with veteran HR leaders regularly to discuss whether a principle belonged. Some removed if too generically corporate or not universally relevant.
+  - "Leaders do not believe their body odor smells of perfume" as part of Apolitical/Vocally Self-Critical principle. Debated whether the lang was too quirky, but kept because it drove the point home effectively.
+  - "Unless you know better ones": Reminder that people should always seek to improve the status quo.
+- How does one remember all 14 principles? A: Needing memorization points to a possibility that the principles aren't woven deeply enough into the fabric of the company. Principles ought to be encountered all the time, and people ought to be held accountable to them.
+- e.g., Perf Reviews: Peer and manager feedback focuses on how one exhibited the principles; Interviews: Candidate evaluated in light of the principles, and 5-7 1-hour interviews are shaped around principles.
+- The Principles(https://www.aboutamazon.com/about-us/leadership-principles)
+  - Customer Obsession: Leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.
+  - Ownership: Leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “that’s not my job.”
+  - Invent and Simplify: Leaders expect and require innovation and invention from their teams and always find ways to simplify. They are externally aware, look for new ideas from everywhere, and are not limited by “not invented here.” As we do new things, we accept that we may be misunderstood for long periods of time.
+  - Are Right, A Lot: Leaders are right a lot. They have strong judgment and good instincts. They seek diverse perspectives and work to disconfirm their beliefs.
+  - Learn and Be Curious: Leaders are never done learning and always seek to improve themselves. They are curious about new possibilities and act to explore them.
+  - Hire and Develop the Best: Leaders raise the performance bar with every hire and promotion. They recognize exceptional talent, and willingly move them throughout the organization. Leaders develop leaders and take seriously their role in coaching others. We work on behalf of our people to invent mechanisms for development like Career Choice.
+  - Insist on the Highest Standards: Leaders have relentlessly high standards—many people may think these standards are unreasonably high. Leaders are continually raising the bar and drive their teams to deliver high-quality products, services, and processes. Leaders ensure that defects do not get sent down the line and that problems are fixed so they stay fixed.
+  - Think Big: Thinking small is a self-fulfilling prophecy. Leaders create and communicate a bold direction that inspires results. They think differently and look around corners for ways to serve customers.
+  - Bias for Action: Speed matters in business. Many decisions and actions are reversible and do not need extensive study. We value calculated risk taking.
+  - Frugality: Accomplish more with less. Constraints breed resourcefulness, self-sufficiency and invention. There are no extra points for growing headcount, budget size, or fixed expense.
+  - Earn Trust: Leaders listen attentively, speak candidly, and treat others respectfully. They are vocally self-critical, even when doing so is awkward or embarrassing. Leaders do not believe their or their team’s body odor smells of perfume. They benchmark themselves and their teams against the best.
+  - Dive Deep: Leaders operate at all levels, stay connected to the details, audit frequently, and are skeptical when metrics and anecdote differ. No task is beneath them.
+  - Have Backbone; Disagree and Commit: Leaders are obligated to respectfully challenge decisions when they disagree, even when doing so is uncomfortable or exhausting. Leaders have conviction and are tenacious. They do not compromise for the sake of social cohesion. Once a decision is determined, they commit wholly.
+  - Deliver Results: Leaders focus on the key inputs for their business and deliver them with the right quality and in a timely fashion. Despite setbacks, they rise to the occasion and never settle.
+  - Strive to be Earth’s Best Employer: Leaders work every day to create a safer, more productive, higher performing, more diverse, and more just work environment. They lead with empathy, have fun at work, and make it easy for others to have fun. Leaders ask themselves: Are my fellow employees growing? Are they empowered? Are they ready for what’s next? Leaders have a vision for and commitment to their employees’ personal success, whether that be at Amazon or elsewhere.
+  - Success and Scale Bring Broad Responsibility: We started in a garage, but we’re not there anymore. We are big, we impact the world, and we are far from perfect. We must be humble and thoughtful about even the secondary effects of our actions. Our local communities, planet, and future generations need us to be better every day. We must begin each day with a determination to make better, do better, and be better for our customers, our employees, our partners, and the world at large. And we must end every day knowing we can do even more tomorrow. Leaders create more than they consume and always leave things better than how they found them.
+- Principles in all processes: e.g., 6-page narrative used in place of .ppt to present quarterly/annual biz updates require adherence to Dive Deep and Insist on the Highest Standards; Press Release/FAQ reinforces customer obsession; Door Desk Award given to person who exemplifies Frugality and Invetion; Just Do It Award given to employees who exhibit bias for action(generally a clever idea outside their job) - Note that the award may still be given if the idea isn't implemented or isn't successful
+- Mechanisms: Reinforcing Leadership Principles
+  - "Good intentions don't work. Mechanisms do.": People had good intentions while developing the problem, so will recur unless the underlying condition is fixed.
+  - The three mechanisms: Annual planning, S-Team goals process, and Amazon's compensation plan
+    - Annual Planning: OP1 and OP2
+      - Teams are autonomous and single-threaded, keeping the company nimble with low friction, but these teams need precise goal-setting to align each team's plans with company goals.
+      - Planning begins in summer, involves managers and staff members of every team over a period of 4-8 weeks
+      - Planning process aligns whole company on what's truly important for the year, with S-Team goals refining that alignment by prioritizing most pressing items.
+      - The process
+        - 1) S-Team creates high level expectations or objectives. e.g., Grow revenue by 50%, Reduce costs by 5% -> More detailed objectives e.g., Revenue growth targets by geo and biz segment; operating leverage targets; improving productivity and passing the savings to customers; generating strong FCF; understanding the level of investment in new businesses, products, services.
+        - 2) each group works on its own granular Operating Plan(OP1) to set out its bottom-up proposal. Work is done in partnership with finance and HR counterparts. The narrative process aims to distill the info such that the org can evaluate 10x as much info as the typical company would in a similar time. The OP1 narrative components:
+          - Assessment of past performance including goals achieved, goals missed, lessons learned
+          - Key initiatives for the following year
+          - Detailed income statement
+          - Requests and justifications for resources: People, marketing spend, equipment, etc.
+        - 3) Plan presented to a panel of leaders, where the level of the leaders depends on the size, impact, or strategic importance of the group. Panel reconciles gaps between OP1 and S-Team goals. If plans are too far apart, group is asked to rework and re-present.
+        - 4) Plans completed before Q4 holiday rush. After Q4, plans are reworked in January if necessary based on Q4 results, generating OP2, which is used as the plan for the calendar year. Any change to OP2 requires S-Team approval.
+          - OP2 aligns groups with company goals. Objectives and targets for revenue, cost, peformance are known. Metrics toward those targets are finalized and supplied as part of each team's deliverables.
+    - S-Team Goals
+      - During OP1, S-Team reviews each of the plans and selects goals/initiatives they consider most important. The group will still work to achieve all presented goals, but resource decisions / prioritization based on the S-Team goals.
+        - e.g., a group working on something may present 23 goals and initiatives, and the S-Team may choose 6 as S-Team Goals. The group will still work to achieve all 23, but will prioritize the 6 over the remaining 17.
+      - S-Team Goals once numbered in the dozens, have expanded to hundreds across entire company.
+      - S-Team Goals are input-focused metrics measuring the activities teams need to perform during the year in order to drive desired biz results.
+      - S-Team Goals must be SMART(Specific, Measurable, Attainable, Relevant, Timely)
+        - e.g., "Add 500 new products in the amazon.fr Musical Instruments category(100 in Q1, 200 in Q2, etc)"
+        - e.g., "99.9% of calls to service are served within 10ms"
+      - S-Team Goals are aggressive: Amazon expects only 75% are fully achieved. Achieving all is a sign to aim higher.
+      - Goals are aggregated and their metrics tracked by Finance. 
+        - Goal reviews are quarterly multi-hour S-Team meetings scheduled on a rolling basis.
+        - S-Team goal review inverts the traditional model in which Senior Leadership meetings focus on big picture, high-level strategy over execution. Instead, leaders toil over the execution details and Dive Deep("Leaders operate at all levels, stay connected to the details, audit frequently, and are skeptical when metrics and anecdote differ. No task is beneath them")
+        - Goals are evaluated as Green(On track) / Yellow(At risk) / Red(Unlikely to meet). Yellow and red are review focus: What's wrong and how will it be addressed.
+        - Review cadence maintains alignment and ensures that every important goal has an accountable owner.
+      - Process has changed as Amazon grew: Structure is the same, but there are separate leadership teams for retail biz vs AWS, and separate teams for the large businesses within those parts, each of which has its own version of S-Team Goals with a different label.
+    - Compensation Reinforces Long-Term Thinking
+      - Even with a clear plan and leadership principles, money talks: If financial incentives aren't aligned to goals, results will vary.
+      - Performance-based comp refers to the company's performance, as aligned to shareholder value. Thus, senior leaders are heavily weighted toward equity comp earned over a period of years, with a MAX base salary low for the industry(e.g., $160k).
+      - Comp misalignment can reward short term goals at the expense of long-term; and reward localized departmental achievements whether or not the company benefits.
+        - e.g., Annual perf bonuses may incentivize sandbagging revenue, thus cannibalizing future results and obscuring current challenges; overspending on marketing to boost current quarter sales at the expense of future quarters or long-term sales; deferring expenses, maintenance, or hiring to hit cost targets while hurting long-term growth.
+      - Amazon's comp is simple: Promotions skew toward higher equity:cash. Contrasts with some companies who reward independent goals for key players at each level -> Infighting, info withholding, resource hoarding, as each player is incentivized to undermine the others.
+        - Frugality principle: "There are no extra points for headcount, budget size, or expense."
+      - High equity:base ratio leaves employees open to poaching for higher base elsewhere, but Amazon accepts that as losing people with a short-term mindset while retaining those aligned to long-term.
+      - Same structure is used in wholly owned subs(IMDb, Zappos, Twitch, etc): Execs are comped in the same manner, thus encouraging collaboration.
+    - Strong leadership principles represent a company's vision and enable good, fast decision making at every level.
+      - No magic number of principles or mechanisms. Each company must focus on how the principles will give clarity to company's vision and drive behaviors that create meaningful value for shareholders over the long term, even when Senior Leadership isn't in the room.
+      - Principles should evolve when necessary. "Learn and Be Curious" was added; "Vocally Self-Critical" was dropped and wrapped into "Earn Trust".
+      - Codifying principles is important, but equally important to embed them into core processes.
+
+### Hiring
+
+- VP at Amazon on interviewing elsewhere: Interview with CEO was free-form with unrelated questions, made it seem as though CEO didn't know what they were looking to find out.
+- Early emphasis on finding people with high SAT scores who could answer questions lke "How many windows are there in Seattle?" ensured smart hires, but didn't prove they would thrive at Amazon.
+  - Bezos: "We want missionaries, not mercenaries."
+    - Mercenaries: People trying to make a fast buck without alignment to the org or resolve to stick with the company when times are tough.
+    - Missionaries: Believed in the Amazon mission and embodied its leadership principles, who will stick around for 5+ years rather than the < 2-year industry standard.
+- Hiring process excellence is important: Not only due to raw time investment, but in the ability to sell the position to most qualified candidates. Wrong hires may leave shortly after joining, inherently crowd out other candidates, and may do substantial damage during their tenure, including lowering the entire team to their standards - a cost paid long after they leave.
+- What doesn't work in the conventional process?
+  - Lacking a model for the interviewer's role in the process may drive the interviewer to wander and ask questions without an objective, failing to collect info on a candidate's likely performance.
+  - Feedback often communicated with low clarity and unintentional bias.
+  - Focus on qualities that don't predict performance can skew decisions in the wrong direction.
+  - Unstructured hiring decision meetings can yield groupthink, confirmation bias, etc.
+  - e.g., Hiring for long-open position, candidate arrives who seems good on paper. On-site, interviewers handed the candidate off, and discussed impressions back at their desks. All interviewers except the most influential handed in reviews. The lone interviewer - overstretched, as they were filling the position in the meantime - agreed with the written assessments but registered being uneasy. However, gave way because he didn't have his notes and had lost the reasoning in the time between the interview and the review. Candidate is given an offer.
+    - Confirmation bias: Sharing thoughts between rounds increases risk that interviewers will focus on positive attributes identified by others and ignore contradictory signals
+    - Failure to report: Nuance in influential, over-stretched interviewer's review was lost
+    - Urgency Bias: The whole team felt pressured to make a move as the position was causing clear pain.
+    - Report quality: Written reviews indicate that questions lacked specificity and purpose, making vague statements without the details that backed them up.
+    - Unstructured review meeting: Enables groupthink, as members value each other's approval and want to solve the problem
+    - Failure to challenge failure to report: Most-experienced interviewer should've been called out to meet the higher standard.
+- The effects of personal bias and hiring urgency
+  - Personal bias: Instinct to surround oneself with similar people(educational background, professional experience, life experiences, etc). These traits do not predict success and quash diversity.
+  - Urgency: When urgency turns to desperation, team may take shortcuts and ignore processes.
+    - e.g., Working on high-importance project whose S-Team goals are at risk. Staff overstretched, morale is low, likely to miss goals without hiring. On top of this, hiring adds:
+      - Writing / revising job descriptions
+      - Coordinate interviewers / recruiters
+      - Review resumes -> conduct interviews -> written feedback -> meet to discuss -> sell the candidate
+  - According to Sequoia Capital, avg SV startup spends 990 hours to hire 12 engineers(80 hours/hire), with that time coming directly from already overstretched staff.
+  - Most candidates will be neither home-runs nor duds, and haphazard hiring may "confirm" quality of process due to success of those hires despite not knowing initially
+  - Without formal process and training, new hiring managers may be driven by urgency, bias, and convenience rather than purpose, data, analysis.
+  - Because many startups hire slowly and then very quickly, the new hires will eventually outnumber the old, putting the entire culture at risk of redefinition.
+    - “Organizational culture comes about in one of two ways. It’s either decisively defined, nurtured and protected from the inception of the organization; or—more typically—it comes about haphazardly as a collective sum of the beliefs, experiences and behaviors of those on the team. Either way, you will have a culture. For better or worse.”
+  - Founders and early employees will feel as though they're losing control of the company culture, and will later trace that back to an ill-defined hiring process: They hired scores of people who would change the culture instead of those who would embody, reinforce, and add to it.
+- Hiring at Amazon before Bar Raiser
+  - Early days: Bezos handles interviewing and hiring. Would ask for SAT scores for every position, even those where the score wasn't relevant, reflecting his bias toward academic accomplishment. Would ask seemingly random questions, "How many passengers fly through LAX in a year?"
+    - Result: Early hires had advanced degrees from good unis and were good at answering random questions. Employees had high intellect and could think on their feet, but no indication how they would thrive in their role.
+  - Later: Department heads ran their own hiring process and made decisions. "New people hiring new people hiring new people".
+  - '99 anecdote: All soft eng except CTO report to two co-leaders, and all teams had aggressive hiring goals. Inability to hire quickly likely meant inability to complete committed-to work. The company is still close-quarters: Many desks per room, desks in hallway, etc. A director is hired from a much larger, established retail company, tasked with building several new teams. He hired managers from that previous company, who in turn hired their own picks. At close quarters, quickly became clear that the talent of the new hires didn't meet the previous - the overall talent level was going down, not up.
+    - Traditional response: Push the new director to "Do better at hiring smart, talented engineers" -> Relying on good intentions for results.
+    - The new director had no way to conclude what Amazon considered a worthy hire, and there was no oversight to teach them or prevent them from hiring poorly.
+    - Co-leaders worked with head of Tech Recruiting to codify hiring process because they realized that even if correcting the individual situation, they would certainly face it again due to aggressive growth.
+      - Fixation on maintaining consistent standard during growth
+      - Bar Raiser was, thus, bottom-up rather than top-down from Bezos
+- The Bar Raiser
+  - After initial acceptance of idea, 20 Bar Raisers were identified, some of whom still work at Amazon.
+  - Scalable, repeatable, formal proes for consistently successful hires.
+  - Excellent interviewers may intuitively make great hires, but they can't scale to the biz needs and it can't be taught.
+  - Bar Raiser program messages that everybody in the hiring process should seek to hire people that raise the bar: People that are better in one or more ways than the other team members.
+  - The role of the Bar Raiser
+    - An identified Bar Raiser receives special training and participates in every interview loop
+    - Cannot be the hiring manager or recruiter
+    - Have veto power, including overriding the hiring manager
+  - Initial Bar Raisers were selected by software co-leaders and Tech Recruiting head based on their interviewing skills, ability to assess talent, adherence to high standards, credibility with peers and hiring leaders, and leadership capability
+  - Program met resistance over the years: Desperate hiring managers were unable to hire quickly; veto power was seen as an enemy standing in the way. Exceptions were not made. Instead, successful managers devoted more time to their process and efforts above and beyond their day-to-day duties - Those who didn't wouldn't last.
+  - The Bar Raiser steps
+    - Job Description
+      - Problem: Many hiring managers are eager to get started - without review, JDs may be fuzzy or out-of-date -> Inability to field the right candidates / difficulty in choosing the interview questions / conflict in interview reviews, where each interviewer was after a different skill set
+      - Specific and focused, written by the hiring manager, reviewed for clarity by Bar Raiser
+      - All JDs will include leadership principles, but most will otherwise vary.
+      - If a new position, members of the interview loop will often meet with the hiring manager and Bar Raiser to review the description, helping to identify any gaps.
+    - Resume Review
+      - Recruiter and hiring manager search for candidates, recruiter selects worthy candidates based on JD
+        - If Recruiter isn't selecting candidates that meet Hiring Manager expectations, the JD may not be specific / clearly written.
+    - Phone Screen
+      - Hiring manager or their designate(for technical roles) conducts 1-hour interview: Describes the position in detail, establishes rapport by describing their background and why they joined Amazon
+      - ~45m should be dedicated to questioning the candidate
+      - Questions are formulated in advance and designed to solicit examples of past behavior("Tell me about a time when you...")
+      - ~15m for candidate questions
+      - If hiring manager is positive they want to move forward, the candidate is brought in for more interviews
+        - If unsure, the candidate should not be brought in to "help make a decision." Too costly.
+      - Aim for 25% pass rate.
+    - In-House Interview Loop
+      - 5-7 hours
+      - Hiring manager constructs the loop, including the mixture of roles / jog levels / expertise that need to be represented. Generallly 5-7 interviewers: More than that = diminishing returns, fewer = knowledge gaps.
+      - Loop will always include the hiring manager, the recruiter, and a Bar Raiser
+      - All participants must have been trained to interview: 1/2-day course on how to interview and the process, after which trainees are paired with experienced interviewers.
+      - No parcipant should be more than one level below the position's level, and no interviewer should be intended to report to the position: Uncomfortable for the candidate during the interview, report will learn about candidate's weaknesses and others' views of those weaknesses, and if overridden may be uncooperative.
+      - The two features of the in-house loop: Behavioral interviewing and Bar Raiser
+        - Behavioral Interviewing: Used to assess how well the candidate exhibits the Leadership Principles
+          - Each member of the interview panel takes one or more of the principles and tailors their questions to those
+          - Goal: Get details of _what_ the candidate personally contributed to solving hard problems or how they performed in situations similar to those at Amazon
+          - Goal: Get details of _how_ the candidate accomplished their goals and whether their methods align with the principles
+          - e.g., "Insist on the Highest Standards" -> "Can you give me an example of a time when your team proposed to launch a new product or initiative and you pushed back on their plan because you didn’t think it was good enough?”
+          - Follow-up questions must acquire specific information on the candidate's precise role in some past accomplishment sifting truth from candidates who may inflate their role vs team; or understate their role so as not to brag.
+          - Questions adhere to STAR(Situation, Task, Action, Result): What was the situation / What were you tasked with / What actions did you take / What was the result
+          - Continue to dig until the interviewer has a good understanding of what the candidate personally accomplished: "If you had been assigned to a different project, what would have changed about this one?"; "What was the toughest call on the project and who made it?"
+          - Different interviews may also call for e.g., coding; systems design questions; or evidence of subject matter expertise.
+          - Interviewers must be trained to maintain control: Candidates may be inclined to detours, and interviewers must know to cut them short and move them to meaningful questions.
+          - Builds on rapport created at original phone interview: Every candidate is a potential customer whether hired or not; and may talk about their experiences.
+        - The Bar Raiser: Ensures process is followed; sets a good examples; and avoids bad hiring decisions
+          - Coaches others on technique, asks proving questions in the debrief, ensures personal biases do not affect decisions, and determines whether the candidate meets or exceeds the hiring bar.
+          - Must master every aspect of the process
+          - Organized by Bar Raiser Core(mostly VPs and directors) who have generally been part of the program for many years, participated in hundreds of interviews, and have demonstrated their mastery of each part of the process.
+            - As company grew, now have multiple Core teams
+          - Selected by current Bar Raisers or Core -> reviewed by Core for provisional approval -> participates in training session lead by Core member -> paired wth Bar Raiser who shadows and mentors them -> Work reviewed by Core -> Final approval(or not)
+          - Skills can be learned by everyone
+          - No change in pay or bonus for being a Bar Raiser
+    - Written Feedback
+      - Detailed notes, as close to verbatim as possible
+      - Specific, detailed, and filled with interview examples that address one's assigned leadership principles
+      - Written shortly after interview to prevent forgetting: Target 15m directly following interview
+      - Thorough enough that the writer need not be present to understand their conclusions
+      - Includes the interviewer's vote: Strongly inclined; Inclined; Not inclined; Strongly not inclined(i.e., 1-4, no neutral midpoint)
+        - Unacceptable to make one's conclusion dependent on the group's
+        - May say that the candidate is mis-leveled(e.g., appropriate for Sr Mgr but not Director)
+      - Interviewer may not see others' votes, comments, or feedback until they have submitted
+    - Debrief/Hiring Meeting
+      - Lead by Bar Raiser as soon as possible, generally within a few days.
+      - Start by everybody reading full feedback
+      - "Would anyone like to change their vote?": Since each interviewer has decided solely based on their assigned area, votes may change after seeing the bigger picture.
+      - May create a two-column list of Met LPs vs Unmet LPs
+      - Bar Raiser uses Socratic method: Questions that invite critical thinking seeking to guide the dialog to everybody - at least a majority - sharing the same conclusion.
+      - Finishes with HM decision, validated by Bar Raiser: If not enough info, then there was a failure in the process
+      - Veto power is rarely used(perhaps to redirect newer hiring managers). An effective Bar Raiser shares the right interview examples and asks the right questions such that it ought to be obvious why the candidate does or doesn't raise the bar.
+      - New HMs may be uncomfortable, as they are used to running the meeting and traditionally would be inclined to sell the room on the candidate. At Amazon, the HM should listen and learn: The process prevents urgency and bias from negatively affecting the decision.
+      - Why not elide the debrief meeting given the written feedback? The debrief serves as a way for each interviewer to learn from their peers and develop their abilities. The Bar Raiser is tasked with challenging anything that went awry and may spend more time coaching in a debrief than assessing the candidate.
+    - Reference Check
+      - De-emphasized since it rarely changes a decision.
+      - HM reached out to former managers, peers, etc.
+      - "Would you hire this person again?"
+      - "Of the people you have worked with / managed, in what percentile would you place the candidate?"
+    - Offer through Onboarding
+      - HM personally makes the offer, not recruiter, and HM is tasked with selling the candidate.
+      - Post-offer, a team member should check in with the candidate weekly in a non-formulaic way(personal message, lunch, etc).
+      - May lead to discoveries: Candidate is sold on role, comp, but family is hesitant. Team should seek to address.
+      - Include people who give you an edge: Former coworkers or those with similar concerns; Senior management; etc.
+  - Variations on Bar Raiser
+    - Tweaks are allowed
+      - A group needing to hire entry-level found that they were getting more no-hires than other teams. Theorized that too many candidates were being passed through at the phone screen. Tested by conducting two screens prior to in-house. Whether or not successful, tweaking based on the data is appropriate.
+      - A group wanted to increase gender diversity and was so successful that it was noticeable externally. Their method: Every resume from a female applicant lead to a screen. Note that the bar didn't change nor did it favor based on gender as the phone screen was just as strict. Exposed that well-qualified women were being rejected early in the process.
+  - Bar Raiser and Diversity
+    - Intended to minimize personal bias in favor of data.
+    - Consider including diverse perspectives in the interview loop.
+  - "Hire and Develop the Best"
+    - Bar Raiser has proven to be a scalable way to identify and attract leaders
+    - Should lead to a virtuous cycle in which those hired early might say "If I interviewed today, I don't know if I'd be hired!"
+
+### Organizing: Separable, Single-Threaded Leadership
+
+- e.g., Bezos and several S-Team members meet with BU leaders in a quarterly review to discuss an initiative stuck in Status Red. Natural start is "What blockers stop you from making progress?" Bezos breaks in, asking who the most senior single-threaded leader for the initiative is. Initial response is BU VP, but that person is responsible for entire group's performance; one of that person's VP's is next, but hey also are not responsible only for the initiative; VP suggests that a Product Manager is the single-threaded owner, to which Bezos points out that the individual wouldn't have the skills, authority, or people to get it done. VP indicates that a hire is in-progress for a directory to head it, but that the JD hasn't been completed. As a result, the initiative will remain Red until that person is hired, and there is no further discussion.
+- Faster moving orgs will innovate more because they can conduct more experiments per unit of time, yet many struggle against bureaucracy: layers of permissions, ownership, accountability that work against fast progress.
+- Single-threaded leadership: A single person without competing responsibilities owns a single major initiative and heads up a separable, largely autonomous team to deliver its goals.
+  - The path to single-threaded leadership was developed over a decade, partly because it required untangling their monolithic arch and the org structures grown with it, then replacing both with systems designed for innocation.
+- Growth Multiplied our Challenges
+  - Rev growth '97-01 was 21x, which brough similar scale in customers, employees, etc.
+  - Observed that the org was spending more time coordinating and less time innovating. Engineers were empowered to touch every part of the system but their work often overlapped, making it difficult to operate independently.
+    - Team dependency chains -> coordination overhead, which takes time.
+    - e.g., two divisions, biz and prod dev, with ecah division split into operating groups by function - retail, marketing, product management, etc. Operating groups on Biz side requested tech resources from Prod Dev(e.g., engineers and technical program managers). Specifically, a TPM tasked with growing the Associates(affiliate) program, which was not viewed as core but had solid revenue potential.
+      - At the time, referral fees were only paid on the specific item linked from the affiliate site. Desire to change to pay based on linked session, as that would strengthen affiliate bonds. Relatively low technical change needed in theory, but sabotaged by existing code structure.
+      - First, gotchas in shared code: Had to coordinate with a herd of teams responsible for creating product pages, cart management, order finalization, etc, because any contribution _could_ break their flows. Similarly, had to review incoming changes to eval whether they would break the new functionality.
+      - Second, Database Steering Group: Everything relied on a single shared db, safeguarded by a steering group(CTO, head DBA, head of Data team) who evaluated changes and planned out implementation timeline. The steering group met only a few times each month and many teams were jockeying for changes. Review was strict, requiring a design review and proof that the change was low-risk and the payoff worthwhile. If rejected, might have to change and then return for a new review session.
+- Organization Dependencies
+  - As software arch may introduce technical deps, org charts may introduce beuraucratic deps: Approval, prioritization, shared resource allocation, etc.
+  - At scale, figuring out who to talk to, who they report to, and how to pitch them on your project took time - and often those people were doing the same thing for their own projects. Alternatively, bottleneck teams receiving too many requests had to make prioritization decisions based on their judgement.
+  - Results in teams feeling disempowered: A team tasked with solving a problem and judged on their solution should be given the tools and authority to do the job, with success resulting in team pride. Owners too dependent on outside teams over whom they have little influence creates frustration.
+- Better Coordination was the Wrong Answer
+  - Often improving communication is the first instinct and there are many formal and informal solutions, but often the cross-team comms just need to be eliminated.
+  - Bezos would say that if AMZN wanted their builders to build, they needed to eliminate communication, not encourage it. Thus, proposal that each team should build and document an API for every system/service: Interaction through machines via well-defined APIs rather than humans.
+- NPI - An Earlly Response to Org Deps
+  - In midst of these tech and org deps, there were plenty of ideas to execute, and prioritization was difficult.
+  - New Project Initiatives(NPI): Tasked with global(org-wide) prioritization, but proved very difficult. How to balance new cost-saving feature against a feature that boosts sales or overdue refactors?
+    - Each quarter, teams submitted projects they believed worthwhile and that required external resources. Proposal was time-consuming: included a one-pager summary of the idea; rough estimate of teams impacted; customer adoption model, if applicable; P&L; explanation on strategic importance to go after the project ASAP.
+    - A group reviewed NPI submissions and cut if it wasn't thorough, didn't address a core goal, etc.
+    - Remaining moved to technical and financial scoping exercise: Real-time, leader from each area would review submission, ask questions, provide resource estimate. Often 30-40 attendees in long meetings.
+    - Original NPI group would true up resource/payback estimates and decide who moved forward, resulting in: Project green-lit, other teams are ready to start; Project not approved, but none of the ones approved require work from you; Project not approved but other teams need resources from you and you must fully staff those before doing any internal projects.
+    - Many projects had unhelpfully broad range of potential cost/benefit, especially since many required predictions of how customers would behave. To improve, established a loop to measure how well estimates matched results for a new layer of accountability, but this accountability could take a year or more to play out.
+    - Often NPI resulted in teams needing to support other projects' requirements while also taking care of their own items.
+    - Morale suffered, but "boost morale" isn't Amazonian: While others view morale as a problem to be solved by company-sponsored entertainment, Amazon wanted to boost morale by attracting the best talent and giving them an environment in which they could invent things that would delight customers - Impossible to do if NPI steps on those projects each quarter.
+      - Morale is an output metric, while autonomy is an input metric. Clearing blockers to autonomy can improve morale.
+- A solution to NPI: Two-Pizza Team
+  - Reorganize engineers into smaller teams that would be autonomous, very loosely coupled to others only when needed.
+  - Experimented inside Prod Dev org to test
+  - Defining characteristics:
+    - Small: < 10 people
+    - Autonomous: Able to accomplish goals solely via published APIs
+    - Evaluated by a "fitness function": Sum of weighted series of metrics e.g., a team in charge of adding selection in product category might have a) how many distinct items added for period(weighted at 50%); b) how many units of the new items were sold(30%); c) how many page views for the new items(20%)
+    - Monitored in real time: Fitness function score displayed on a dashboard alongside all other teams
+    - Acts as business owner: Responsible for all aspects including design, tech, and biz results. Can't fall back on "We built what the biz folks asked for", "The tech team didn't deliver what we asked for on time", etc
+    - Led by a multi-disciplined top-flight leader: Deep technical expertise, experience in hiring engineers and product managers, and excellent biz judgement
+    - Self-funding: Team's work pays for itself
+    - Approved in advance by S-Team: S-Team must approve very two-pizza team
+  - Two-pizza team evolved over time and required severel adaptions:
+    - Tearing down monoliths: Having established that SOA would enable isolation and innovation, the org was tasked with replacing the existing monolith, shared database, etc, all while maintaining uptime and growth. The initiative would span years. In the long run, SOA did enable the desired autonomy.
+    - Autonomous teams: To ensure that an autonomous, quick-moving team would be aligned, S-Team gated the formation. The specifics of _how_ the team would accomplish its goal weren't discussed, as that was up to the team.
+      - Gating factors:
+        - Does the team have a well-defined purpose(e.g., "How much inventory should Amazon buy of a given product and when?")
+        - Boundaries of ownership must be well understood(e.g., this team will ask the Forecasting team to predict demand, then use that answer as an input for buying decision)
+        - Agreed upon metrics for measurement(e.g., in-stock product pages displayed as a percent of total, weighted at 60% + Inventory holding cost, weighted at 40%)
+      - Embodied Deep Dive: Initial meetings questioned every metric from every angle to determine how they would be collected and used to drive the team toward its goals. This also built leadership trust.
+      - In the beginning, each time started with a set of dependencies that would hold them back until elimination, and elimination was arduous with no immediate pay-off. Those early teams spent much of their time removing dependencies and building instrumentation before adding anything new.
+        - e.g., Picking team owns software directing workers on how to find items on shelves. 9 months to remove upstream dependencies like receiving inventory from vendors and downstream, packing and shipping. 
+      - Alternatively, some teams went after the more attractive features first and quickly lost momentum, dragged down by their deps.
+      - Well-instrumented teams were better at detecting and fixing any mistakes ASAP. Faster course correction limited cost due to bad decisions.
+      - Autonomous teams may not always make the right decision, but OP1 was a strong guardrail.
+      - Some deps are unavoidable: Cross-functional projects, top-down initiatives. The org worked to minimize these, but they were a necessary tax and some teams would pay more than others.
+- Challenges with two-pizza
+  - Worked best in product dev: Trying to spread it to legal, HR, etc failed because those teams generally didn't have deps as snarled.
+  - Fitness functions worse than their component metrics. Eventually reverted to the underlying merics as long as there was agreement on the metrics up front and the goals for each one.
+    - Intended to alert a team if it was drifting off course, but teams struggled to construct the most meaningful function(e.g., determining component weights). Easy to get lost in debate. 
+    - Too complicated, using may metrics composed of other metrics. The resulting graphs were hard to interpret, and the relative weighting changed as the org did so historic results were lost.
+  - Great leaders were rare: Too many disciplines required to succeed. Relaxed into matrix org model, where each member reported to a functional manager sharing their JD with a dotted-line report to the 2-pizza mgr. 
+  - Sometimes, you need more: Leadership effectiveness better predicted success than raw size. Thus, 2-pizza became "Single-threaded" leaders and teams.
+- The Single-Threaded Leader
+  - Original 2-pizza leaders(2PTL) became STLs
+  - Conventional: An exec tasked with initiative taps a director - who is responsible for some number of all of the initiatives - and gives back somebody who will take responsibility for that specific initiative, perhaps a Project Manager. The PM consults an Eng Director for eng resourcing, who must squeeze it into existing schedule somehow.
+    - Too many people managing too many schedules means that the project may never start or finish.
+  - Instead, tap a single leader to drop other responsibilities and hire/staff for a single initiative.
+  - Requires a separable, single-threaded team: “Separable means almost as separable organizationally as APIs are for software. Single-threaded means they don’t work on anything else.”
+  - Results in clear, unambiguous ownership of features or functionality, allowing innovation without relying on or impacting others. 
+  - Deployment as a rule of thumb: Can the team build and roll out their changes without coupling, coordination, or cross-team approval?
+  - Not limited to a small team e.g., Amazon Echo was assigned to STL but _could_ have been broken across hardware vs software with nobody solely responsible for launch.
+- The Payback
+  - STL delivers high-velocity innovation and a more nimble org.
+  - Innovators can experiment at every level.
+  - Accountability is obvious.
+
+### Communicating
+
+- Many meetings start with silence while attendees review a six page doc.
+- Six-pager: Describes, reviews, or proposes ideas, processes, or businesses.
+- PR/FAQ: For new product development
+- Ending Powerpoint at S-Team Mtgs
+  - S-Team met weekly for 4 hours with 80% dedicated to progress toward achieving S-Team Goals, including a deep dive into 2-4.
+  - Initially, began with a preso from relevant team, but presos rarely showed actual progress and often questioners would interrupt the flow by peppering the presenter with questions, leading to long discussions not related to the main argument or that were addressed in later slides. Presos also favor dynamic presenters over the content.
+  - Tufte: “As analysis becomes more causal, multivariate, comparative, evidence based, and resolution-intense,” he writes, “the more damaging the bullet list becomes.” (i.e., a linear set of low-content slides make it hard to refer one idea to another.) / “For serious presentations,” he wrote, “it will be useful to replace PowerPoint slides with paper handouts showing words, numbers, data graphics, images together. High-resolution handouts allow viewers to contextualize, compare, narrate, and recast evidence. In contrast, data-thin, forgetful displays tend to make audiences ignorant and passive, and also to diminish the credibility of the presenter.”
+  - PPT was banned immediately, leaving upcoming presenters (vocally) in the lurch, needing to adapt to the new mandate to present an idea that may have been months in development.
+  - No rules up front led to long documents, etc. Instead, six pages, no formatting tricks, appendices allowed with supporting detail.
+- How to write an effective six-pager: Anti-PowerPoint Study
+  - NOTE: Structure and content will vary - More examples in book
+  - Summarize the problem you're solving: "Our decision-making process simply has not kept up with the rapid growth in the size and complexity of our business. We therefore advocate that, effective immediately, we stop using PowerPoint at S-Team meetings and start using six-page narratives instead."
+  - Explore the problem you're solving in detail
+  - Detail how you arrived at your solution, the inspiration for your solution
+  - Summarize your proposal
+  - Summarize the tenets that your proposal relies on("Our Tenet: Ideas, Not Presenters, Matter Most")
+  - Explore the advantages of your proposal(The Reader's Advantage: Information density, interconnection of ideas; The Presenter's Advantage: Forces greater clarify of thought)
+  - Detail the process required as part of your proposal("How to Conduct a Meeting in This New Format")
+  - Conclusion
+  - FAQ(An exploration of counter-arguments)
+- The New Meeting Format
+  - Estimate a reading speed of 3ppm, thus 20m silence for a six-pager.
+  - Aim for 2/3s of time discussion: 1hour -> 6 pages, 30m -> 3 pages, etc
+  - After silence, presenter takes the floor but should not reiterate the doc as attendees have already read it.
+  - Consider asking each person for high-level feedback, one at a time, then going through the doc line by line; or ask each individual to give their complete feedback before moving on; etc. No one approach.
+  - After individual feedback, discussion: Audience asks questions of presenter(s). Assume that presenters have put a great deal of thought in, so the session should be treated seriously.
+    - During discussion, collect notes, preferably via a non-presenter. Pause the mtg if there isn't a scribe.
+- Feedback as Collab
+  - Remember that you aren't just commenting on a doc, you're shaping the idea and playing a role in the success of that idea.
+  - Docs are public, thus giving plenty of "good" examples
+  - When a subpar one slips through, adjourn the meeting and ask for improvement - This should be very rare
+  - Bezos' trick: "Assume each sentence is wrong until he can prove otherwise" - This often gives different insight.
+    - e.g., “Our customer-friendly returns policy allows returns up to 60 days from the time of purchase compared to the 30 days typically offered by our competitors.” -> The policy may be better than competitors', but is it _actually_ customer friendly? -> If Amazon is customer obsessed, why penalize the 99% of honest customers who want to return the item by making the wait until Amazon receives the ite and checks it isn't damaged?
+  - The high bar serves as a soft reminder to writers to double-check that they have been thorough and that the item is aligned with the Leadership Principles.
+- Final Thoughts on Narratives
+  - Should increase quality and quantity of effective communication, but requires hard work and taking the risk of throwing the effort to critics.
+  - The responsibility behind the narrative requirements drives responsibility for the audience, who must thoroughly eval the idea(not the team or pitch) and suggest improvements. Silence or acceptance are effectively saying you believe the idea is sound.
+  - Most narratives will go through several reviews.
+
+### Working Backwards
+
+- Start with the desired customer experience, then work backwards to what ought to be built.
+- Trial and Error, Then Success
+  - Bezos had his standing S-Team meetings, normal operational updates, exec fire drills, but spent most time in product team meetings: 1-2 hours each doing a deep dive on new products or features. Product team meetings were hit-or-miss: Get up to speed on where left off -> Review progress and discuss -> Next steps before reconvening. Too many issues: Setup time was too long; teams would discuss exciting accomplishments rather than needed decisions; teams were mis-aligned with Bezos; etc. Frustrating for all.
+  - Many ideas, but eventually settled on PR/FAQ: Writing a press release announcing the product as if it were ready to launch and an FAQ anticipating tough questions.
+- Where are the Mock-Ups? Bill and the Launch of Digital
+  - '04: Needed to revamp e-book store while also launching stores for digital music, movies, tv. Initially thought would be similar to other launches, but creating a great digital media customer experience was complicated.
+  - 3-4 people created traditional MBA biz plans: Market size, financial models, etc. Bezos would ask for mock-ups: Visual reps to show how the new service would look, showing the customer experience from landing page to purchase(including screen design, buttons, click sequence, etc).
+  - Returning with mock-ups, Bezos questioned wording, colors, whether the experience would match iTunes, etc. MBAs were looking for approval to start hiring a team, negotiating content deals, etc, but Bezos wanted to know exactly what was being built and how it would beat the competition. He wouldn't approve charging down the first path available.
+  - Exploring these paths uncovered how different the biz would be, including custom apps and hardware. Presented in various ways, but none proved effective. Eventually, Bezos asked for narrative pitches instead of visuals, which forced thorough exploration of the underlying idea.
+  - Instead of writing the PR after, write it up front: Avoid e.g., engineering building a $2000 product focused on features when marketing discovered that the market would only bear a $1200 product.
+- The Kindle PR
+  - Initial drafts focused on tech challenges, biz constraints, sales and financial projections, etc. Focus was on creating a product that would be good for Amazon, not good for customers.
+  - Inverting the process ensured the Kindle would be great for customers: Excellent screen, easy ordering process, etc.
+  - Included both internal and external FAQs
+    - External, from customer PoV: "Where can I purchase it?" "How does it work?"
+    - Internal, from teams and leadership PoV: "How can we make the device with the desired display quality and a gross margin of 25%?", "How will the Kindle connect to carrier networks without customers signing a carrier contract?"
+- PR/FAQ Benefits
+  - Shift from internal perspective to customer - What makes the product compelling?
+  - PR: Highlights of customer experience. <= 1 page
+  - FAQ: Details, risk assessment, challenges, etc. <= 5 pages
+  - Often goes through many drafts and meetings with senior leaders.
+  - Usable for ideas and initiatives(e.g., a new compensation policy)
+  - Length limits are intentional: Not about documenting all of your work
+  - Process
+    - Originator drafts.
+    - Once shareable, sets up 1hr with stakeholders to review.
+      - Each attendee gets a copy and reads, then writer solicits hihg-level feedback. Generally, most senior speak least to avoid coloring feedback.
+      - Writer solicits line-by-line comments. Hard questions, intense debate of the key ideas and how they're expressed. Point out things missing or to be omitted.
+    - After meeting, minutes are distributed to attendees, including feedback.
+    - Originator revises per feedback.
+    - When polished, presents to exec leaders for a similar feedback meeting. Repeat.
+    - Even after approval PR/FAQ will be updated to reflect changes and new elements.
+  - Example(in book) includes: Consumer needs and TAM, unit economics + P&L, key dependencies, feasability, etc.
+- Press Release Components
+  - Heading: Name the product in a way the reader(customer) will understand. One sentence. "Corp announces the launch of Melinda, the smart mailbox."
+  - Subheading: Describe the customer for the product and the benefits they will gain. One sentence. “Melinda is the physical mailbox designed to securely receive and keep safe all your e-commerce and grocery deliveries.”
+  - Summary Paragraph: City, media outlet, proposed launch date. Summary of the product and benefit. “PR Newswire, Atlanta, GA, November 5, 2019. Today Blue Corp. announced the launch of Melinda, a smart mailbox that ensures secure and properly chilled delivery and storage for your online purchases and groceries.”
+  - Problem Paragraph: Describe the problem that your product is designed to solve from the customer's PoV. “Today, 23 percent of online shoppers report having packages stolen from their front porch, and 19 percent complain of grocery deliveries being spoiled.”
+  - Solution Paragraph(s): Describe your product in detail and how it solves the customer’s problem. More complex products may need more than one paragraph. “With Melinda, you no longer need to worry about getting your online purchases and deliveries stolen…”
+  - Quotes and Getting Started: One quote from you or your company's spokesperson, a second from a hypothetical customer who describes the benefit they are getting from your new product. “Melinda is a breakthrough in safety and convenience for online shoppers…”
+- FAQ Components
+  - More free-form, but generally no pictures - Charts, tables, etc are appropriate. Mock-ups can be provided as an appendix.
+  - External: Questions customers and press will ask about the product: How it works, cost, where to buy, etc. Varies by product.
+  - Internal
+    - Customer Needs and TAM: How many consumers have this need / problem; How big is the need; How many think the problem big enough to spend money on it; How much money; How many of these customers have the capabilities / constraints needed to use the product
+      - Allow identifying core customers by filtering non-users - For Melinda, people who don't have a front porch; don't have an energy source; etc. Narrows your TAM.
+    - Economics, P&L: Per-unit gross profit and contribution profit; Rationale for price point; Up-front investment in terms of people, tech, inventory, warehouse space, etc.
+      - Useful to collab with finance to capture these.
+      - For new products, up-front investment may be large, meaning that it RoI may not be positive for a long time.
+      - Consumer qs and econ analysis effect price point, which further narrows TAM.
+      - Price is a key variable: If particularly low or high, explain why. "Not-to-exceed" may force team to innovate within that envelope, including making trade-offs early on. e.g., if Melinda's largest TAM requires a $99 price but the BOM is $250, you must either reduce the BOM(fewer features, etc) or create a financial plan that takes heavy losses, mitigated as the product achieves scale or can be enhanced with an additional revenue source(e.g., subscription)
+    - Dependencies: e.g., for Melinda, how to convince couriers to use the box; convince them to use the UI properly; convince them to take extra time; what third party tech are dependencies
+      - Third parties have their own agendas / incentives that may impact product uptake, and regulator / legal challenges may arise.
+      - For Melinda, a failure to convince couriers will likely fail the product: Must describe these risks and how they'll be overcome.
+    - Feasability: engineering challenges; UX challenges; third-party dependencies; risk management for up-front investment
+      - Clarify the level of invention needed and the relevant challenges: Technical, legal, financial, partnerships, etc.
+- Go Ahead?
+  - Most PR/FAQs never launch i.e., Product Managers will put a lot of time exploring opps that are DoA due to resource competition, etc. While time is "wasted" in this initial phase, it's much less cost than if software team(s) work on it, and those teams can focus on building the highest impact products.
+  - Enables team to understand specific constraints and problems that would prevent viability and aligning on those, either committing to a solution or not.
+  - PR/FAQ process may itself prove that the idea isn't viable due to limited TAM, difficult UX challenge, or deps.
+  - If leadership does believe in the product, they will fully understand the risks: Perhaps the org needs a partneship, acquisition, or for a new technology to mature or get cheaper. Or perhaps the org is willing to take the risk because the TAM and potential rewards are great - No need to fear hard problems if solving them unlocks substantial value.
+  - PR/FAQ is living: Once approved, will be edited and changed with leadership review.
+
+### Metrics: Manage Your Inputs, Not Your Outputs
+
+- Staying Close to the Biz
+  - At scale, Bezos could not see all process parts - Managers and reports needed to serve as proxies. Difficult to reliably answer "How is the business trending?"
+  - '00: AMZN sees $2.76B in rev, 44% growth YoY in Q4. There is a daily meeting to review the backlog: The amount of work needed to ensure customers received gifts before holidays, and a bad estimate would ruin a customer's holiday. Eventually led to the Weekly Business Review to provide a comprehensive lens through which to see the biz.
+- Note: WBR and DMAIC examples in book are from large companies. Scale investment as appropriate to the resources you have. Humble beginnings that mature over time.
+- The Metrics Lifecycle
+  - a la Six Sigma: Define-Measure-Analyze-Improve-Control
+    - Define
+      - The right metrics will deliver actionable guidance, while the wrong will add noise.
+      - Take leading indicators(inputs) over lagging(outputs): Track selection, price, convenience, things that the org can control. Don't emphasize orders, revenue, profit, as those can't be directly manipulated, but are achieved through the leading inputs.
+      - "Amazon can only do that because they don't care about profits": False, Amazon cared about profit, revenue, FCF, but emphasizes the inputs that drive those outputs.
+      - The flywheel: Input metrics lead to output metrics and back: Better customer experience leads to more traffic -> More traffic attracts more sellers -> More sellers widens selection -> Wider selection enhances customer experience, completing the circle.
+        - The entire cycle drives growth, lowering cost structure -> Lower costs lead to lower prices, improving customer experience, and the flywheel accelerates.
+      - Identify the correct, controllable input metrics: Choosing the wrong metric may drive undesirable behavior e.g., Number of new detail pages created as a marker of better selection -> Teams focused on adding many detail pages via new products, including establishing vendor and manufacturer relationships and figuring out how to store inventory. However, while selection improved, sales didn't: Teams had purchase low-demand products, causing increased inventory cost. 
+        - Instead, leadership pored over metric asking what would result in the desired output: Number of detail pages -> Number of detail _views_ -> % of detail views in which product is _in-stock_ -> % of detail views where product is _in-stock and ready for 2-day shipping_.
+        - Trial and error: Test and debate over time.
+        - Once output metrics are seeing improvement, standardize on the input metrics and measure tams against that standard(e.g., 95% of detail views display an in-stock, ready-to-ship product)
+          - Once established, teams may change how they work e.g., focus on reviewing other stores' selections and mining search logs to understand what products weren't being found by customers -> Create a prioritized list of manufactures to approach / items to acquire that will most drive output metrics
+    - Measure
+      - Critical to be unbiased. Teams may naturally want to choose metrics that show their units succeeding. Must combat e.g., Finance team must be responsible for reporting the data exactly as they see it.
+      - Selection of bias-free tools will take dedicated time and effort
+      - After determining tools, must collect data and present it in a usable format - If it's across many systems, do not compromise: Bring it together, even if it requires investment. This is the dashboard for the biz.
+      - As collection tools develop, dive deep to ensure that measures measure what you expected: Dig into how the data is collected for insight e.g., if the metric is "In Stock", you could take a snapshot of your catalog each night and weight by trailing 30d sales; or add software on product pages that emit counter increments at view time, aggregate to get total in-stock. Each measures in a different way and yield radically different results:
+        - The first may skew data based on the time of day when inventory is received(e.g., company was out-of-stock all day but came in toward the end, so is counted as in-stock) and a popular item out-of-stock for a long time will have less impact each day since we weight by trailing 30d sales. This metric is operations-centric.
+        - The second is more accurate, as it captures the metric from the customer's PoV. This metric is customer-centric.
+      - Metrics must be audited / validated regularly or they will likely drift and skew the numbers. Important metrics will need a separate measurement or set of customer feedback as a check against the raw numbers. e.g., COVID testing by region, cannot evaluate % positive against a region of similar size without also considering the number of tests per capita performed.
+    - Analyze
+      - Develop a comprehensive understanding of what drives metrics - Determine external factors that impact the process to separate signal from noise.
+        - e.g., Why can we pick 100 items per hour at a fulfillment center during one shift, but only 30 per hour during another?
+      - To assess surprising data and discover root cause, Correction of Errors(COE) process, stemming from Five Whys(Toyota)
+        - The team who had the error / problem writes a doc describing it and drills down to root cause with Five Whys
+    - Improve
+      - Once you have a solid understanding of your process and a robust set of metrics, can improve the process(e.g., Once you're achieving 95% in-stock rate, can start to ask what to change to hit 98%)
+      - Relies on prior three steps, as your actions are more likely to improve the metric once you're responding to signal instead of n oise
+      - After doing WBR for a while, a metric may no longer be yielding useful info, and should be dropped
+    - Control
+      - As fundamental understanding of biz drivers improves, WBR may become exception-based rather than regular
+      - Once a process is well-understood and the decision-making logic is repeatable, you may be able to automate. e.g., forecasting and purchasing took years of collaboration between buyers and engineers, but is now done automatically with greater accuracy.
+- The WBR: Metrics at Work
+  - The deck: A data package including weekly snapshots of graphs, tables, and explanatory notes for all metrics. Modern orgs may not assemble a single deck, instead creating a virtual deck that allows departments to generate a view for their own area.
+    - Represents data-driven, end-to-end biz view: Departments are generally separate, but biz activities aren't. The deck is an e2e review that follows the customer experience with Amazon. The flow across topics can reveal connections in seemingly independent activities.
+    - Mostly charts, graphs, and tables: So many metrics that narrative / notes undercut efficiency of read-through(except anecdotes)
+    - No magic number for metrics: Find them over time and continously improve them, adding or removing as needed.
+    - Emerging patterns are a key focus: Individual points can tell stories. Trend lines can highlight emerging challenges long before quarterly/annual results.
+    - Graphs plot results against comparable prior periods: Metrics should trend better over time and periods ought to be designed to avoid "false" variances like holidays or weekends.
+    - Graphs show two or more timelines(e.g., trailing 6wk and 12mo): Short term trends may surface small issues that don't appear over long periods
+    - Anecdotes and exceptions are woven in: Must have a facility to report on anomalies as these may reveal a defect, broken process, or broken system logic. 
+    - Generally owned / certified by Finance
+    - Consistent and familiar formatting for easy interpretation: Graph design, time periods, palette, etc are generally consistent to allow faster digestion and allow readers to focus on trend / anomaly spotting.
+  - The meeting
+    - Not visible outside company
+    - Intense customer focus, deep dives into complex challenges, insistence on high standards and operation excellence
+    - Focus is never on output metrics - Execs must know them, but must always focus on inputs.
+    - Input metrics must be visible to entire company
+    - For most companies, the audience are the CEO and CFO - Exec team and their direct reports should be included; anybody speaking to a specific section. Virtual meetings make it easy to open it to many more for increased engagement and opportunities to learn by observing more seasoned leaders.
+    - At Amzn, even most senior execs review the full deck including all inputs/outputs. They must examine the trends and changes in metrics; audit incidents, failures, and customer anecdotes; and consider whether the input metrics need updating to improve the output.
+    - WBR isn't the only usage of metrics: Dashboads and reports are established by every engineering, operations, and BU to be monitored real-time, perhaps with alerts for failures and outages.
+    - Focus on variances, not the expected: It's tempting to talk about the success of one's area, but if things are normal then simply move on.
+    - Biz owners own metrics and explain variances: Owners provide variance explanations, so must review the deck prior to WBR and respond by discussing an action plan to address variances. Failing to review and think prior should be challenged in the meeting. If prepared but don't have the right answer, simply say that you will analyze and follow-up rather than guessing or making something up.
+    - Don't browbeat: Digging into variation or calling out failure to adhere to high standards is good, but contributors must feel comfortable discussing. Mistakes are a learning opp for all, and if people aren't comfy then they will seek to hide, robbing the group of that learning. Mistakes should be messaged as a chance to take ownership, understand root cause, and learn.
+    - Make transitions easy: Presenter transitions shouldn't be hobbled by slow-loading dashboards, etc. Put the work in to make these seamless, as the meeting will be expensive and should be impactful.
+- Anatomy of a metrics chart
+  - May be hundreds of charts, thus the need for consistency.
+  - Side-by-side timeframes to show longer trends alongside zoomed-in data(which benefits from the wider context)
+  - Note: Several charts in book to dive into meaningful displays
+  - Output metrics show results, input metrics guide: While output metric graphs may show decelerating growth, they can't tell you why, and the deceleration may not show up for some time. Input metrics should show signals earlier.
+  - Not every chart compares against goals: A chart may be for trend-spotting or process anomalies, or a metric may not have a target(e.g., Android vs iOS users).
+  - Data combined with anecdote to tell the whole story
+    - Amazon seeks to ensure that customer feedback regularly reaches teams that own / operate services.
+    - e.g., Voice of the Customer: Customer service collects and summarizes customer feedback for WBR presentation and has wide latitude on selecting what to present. Often the stories highlight how customers were let down, showing opportunities for improvement.
+      - e.g., Software barraged a few credit cards with repeated $1 pre-auths that should only happen once per order. Seemingly harmless, but one customer's card was later declined as she went to buy meds for her child due to the auths. At scale, these exceptions will happen again, and examining edge cases may reveal other ways in which the bugs have effected customers.
+    - e.g., Contribution Profict Exception report that reveals the top ten products whose sale did not generate profit in the previous week. Diving into these may reveal that CP was negative due to
+      - markdowns based on too much inventory -> initial purchase was triggered by automation fed faulty input data -> investigate and fix the input data
+      - markdowns from a manual purchase order error in which the buyer bought too much due to a lack of training -> teach and train the individual
+      - faulty cost allocation due to the finance system -> fix the cost allocation system
+      - logistics provider charged 2x for shipping due to incorrect size/weight info -> fix catalog data and plan a mechanism to prevent the same error happening for other items
+      - item sold at low price and costly to ship(e.g., whiteboards, rakes) -> evaluate whether these items should be stocked and sold or whether you should change suppliers or shipping method.
+    - e.g., Customer Connection program - mandatory for corporate employees above some level to serve as a CS agent for a few days, including refresher training, listening to calls, watching email/chat interactions, and then handling customers directly. Once proficient, they perform those tasks under CS agent supervision. Bezos was not exempt. In one case, as a customer fumbled for the product info, a CS agent predicted the item she was talking about -> Questioned, said that it was common with this newly listed product as packaging was inadequate, but CS was powerless to improve the process(though it might have been caught over time by a report looking at high return rates). Bezos wanted an Andon Cord(per Toyota, a cord that any employee can pull to stop the assembly line if they notice a quality problem) - Something to allow CS to halt selling a product and alert the category manager to the issue for resolution. There was fear that CS would overuse the privilege, but in reality it surfaced issues more quickly - Give employees the right tools to solve problems and rely on their good judgment for great results.
+- Pitfall: Disaster Meetings
+  - More attendees -> more bloat. More metrics, some of which didn't contribute anything.
+  - No meeting ground rules, lots of sniping and interruption.
+  - Anomalies were trigger accusatory questions and people would chime in solely to score points, perhaps to delay their own turn until time had run out.
+  - The most senior person should set the tone and ground rules each week; limit attendance to owners and stakeholders; limited metric to a meaningful set. 
+  - Each attendee should have examined the failures of the meeting and realized that the measures weren't operationally under control or predictable, and many had skipped the first three steps of DMAIC. Should have challenged.
+  - Leadership should have recognized that implementing WBR for this new group was going to be messy. Should have ensured that attendees felt safe and encouraged to discuss mistakes and learn. "I screwed up, here's what was wrong, here's where it broke" not "Who is the person with poor judgement who did that?"
+- Pitfall: Noise obscuring signal
+  - Variation is normal and trying to attach meaning to variation within normal bounds wastes time if it's not downright misleading.
+    - e.g., Crowing about a .1% improvement in a key metric wastes time to talk about more important ones; and dissecting a .1% deterioration wastes time diving into why and looking for a fix.
+  - Owners must understand what's normal in a metric, whether owned by a director or an IC. XMR control charts can highlight when a process is out of control but experience and customer understanding may be the best filter.
+
+### Introduction to Part 2
+
+- Bezos 2015, "We want to be a large company that's also an invention machine. We want to combine the extraordinary customer-serving capabilities that are enabled by size with the speed of movement, nimbleness, and risk-acceptance mentality normally associated with entrepreneurial startups"
+  - "I believe we are the best place in the world to fail (we have plenty of practice!), and failure and invention are inseparable twins. To invent you have to experiment, and if you know in advance that it's going to work, it's not an experiment.
+
+  Most large organizations embrace the idea of invention, but are not willing to suffer the string of failed experiments necessary to get there. Outsized returns often come from betting against conventional wisdom, and conventional wisdom is usually right. Given a ten percent chance of a 100 times payoff, you should take that bet every time. But you're still going to be wrong nine times out of ten.
+
+  We all know that if you swing for the fences, you're going to strike out a lot, but you're also going to hit some home runs. The difference between baseball and business, however, is that baseball has a truncated outcome distribution. When you swing, no matter how well you connect with the ball, the most runs you can get is four. In business, every once in a while, when you step up to the plate, you can score 1,000 runs. This long-tailed distribution of returns is why it's important to be bold. Big winners pay for so many experiments."
+- Budget is key - Be patient and frugal. Being patient(long-term mindset) enough is important, as some initiatives will take time to yield returns.
+  - Consider being frugal on things that may not lead to a better customer experience like marketing spend, trade show booths, etc. in order to fund these long-term bets.
+- Invention works well where differentiation matters - Amazon didn't create its own data center hardware, but it did own the Kindle hardware creation as differentiating the Kindle as outstanding vs existing e-readers was important.
+- Fire Phone as failure
+  - Key differentiator was Dynamic Perspective, but the problems it solved weren't compelling enough for consumers to buy in; was priced at a premium level for the time.
+  - The PR/FAQ, Amazon process improves odds of success but can't guarantee it outright. Sometimes you'll swing big and miss, but the winners should outpace the losers.
+- As company grows, one-size-fits-all decision-making can impede invention. Type 1 decisions: Consequential, irreversible decisions require extra caution and care. Type 2: Most decisions, reversible, should be made quickly by high-judgment individuals or small groups(e.g., Prime subscription for fast delivery, which could be tweaked until they got it right)
+  - Companies tend to design decision-making processes that manage Type 1 decisions - Slow, risk averse. Often they apply this same process to Type 2, reducing speed and innovation.
+
+### Kindle
+
+- Bias for Action: Physical media biz predicted to fall against digital on the heels of iPod adoption, Bezos goes all in.
+- Making the Turn to Digital
+  - 2003: Jobs invites Bezos, other execs to Apple and unveils iTunes for Windows - Mac was 10% of the pc market. Predicts Amazon will end up with an ever-shrinking share of higher priced CDs as they became more rare. After leaving Bezos took months to think things through, then appointed a single-threaded leader to work with him to develop Digital strategy - Chose "Who" and "How" decisions before "What". Amazon was still early, so had to be frugal.
+    - Why a completely new org?
+      - Bezos felt that if combined into the Physical media org, Digital would never get attention and would move too slowly. The leader was key, as the previous senior ranking person in Digital was a product manager, while the new would report directly to Bezos and would need to build a team out for Music, Video, e-books, etc.
+      - No need to focus on responsibilities of running an existing operation: 1slt entirely to Digital.
+      - No need for existing operation to split attn to Digital: 1slt entirely to existing.
+    - Bezos also promised additional time investment to Digital, meaning less to existing operations, but was kept up-to-date via 6-pager, S-Team goals, PR/FAQs. The process enabled his involvement in the right amounts(and did the same for other org leaders to scale them out).
+  - Everybody saw the digital transition coming and won(Spotify, Hulu, Youtube) or lost(Zune, Nook, Napster)
+  - The Startup Phase for Amazon Digital Media and Devices
+    - Six months of research: Met with media company partners about how they saw present and future(e.g., e-books were selling, but publishers weren't positioned for growth in terms of pricing or availability; record companies were eager to have another shop in the room to combat Apple's hold via iTunes; there was no real story around video). In addition to better understanding potential acquisitions, helped Amazon understand the market landscape and challenges. Wrote PR/FAQs in between so that the vision was constantly updated as understanding matured.
+    - Why not buy somebody operating in digital? Bezos was insistent that the companies were copy-cats and couldn't offer unique value against iTunes. Two categories:
+      - Fast Follower: Somebody who makes a close copy of successful products
+      - Inventor: Creates a new product on behalf of customers. Arguably more difficult, since creating from whole cloth vs copying success.
+      - Since digital was changing rapidly, a fast follower would likely be late to market with an offering that had already been outstripped by newer service(s). Instead, chose to invent and focus on e-books / e-readers.
+    - 2 pizza teams with autonomy to deliver agreed-upon goals: Bezos didn't need to deal with resourcing at a low level, 2pt leaders held accountable for staffing and meeting goals.
+      - Teams were not inter-dependent, so they couldn't fail because e.g., another team blocked progress.
+      - 2pt at the top of the org chart: Should product, eng, and biz all report to one leader; or should each report to a leader who then worked with the other leaders on details?
+        - Separate Category Leader for biz and tech for each digital category(Books, music, video) who would hire leaders for each function(prd, marketing, content mgmt, etc).
+        - GMs are category leaders with a corresponding peer leader on Eng side.
+        - Each eng category had 2pt for each major component of the software(e.g., content ingestion and transformation) and client software. Driven by leader skills: Leaders didn't have e.g., experience managing an entire engineering org.
+    - 2004: Two leaders directly reporting to head of Digital. 2005: head of Digital had hired appropriate leaders to run each element of product and biz vision, fitting each in to narrow the scope of responsibility while increasing scale of role.
+      - Reduction of scope was seen by some as a demotion, though intent was to signal commitment to long-term digital play.
+      - e.g., Head of Books, Music, and Video => Head of Music, Video. Constant(Annual) attention to appropriate scope. 
+      - Not a radically different org structure, but singular focus instead of combo-ing with existing ops was different.
+  - Amazon: A Device Maker?
+    - Competitive advantage in Physical was broad selection on a single site; consistently low prices since no retail presence. Barrier to entry was much lower for Digital: Hosting and serving costs were similar for all, and aggregation was doable.
+      - Physical: Amazon is middle of the value chain: Value is in sourcing, aggregating goods on a signle site, pricing well, and delivering quickly.
+      - Digital: Value was on the ends of the value chain, at Content Creation(authors, publishers, etc) or Content Consumption(e.g., reading and listening devices).
+      - Amazon had no expertise at the ends of the value chain, but started with the customer and worked backwards.
+      - Chose to focus on e-books as books were the largest category at the time and there was no great non-PC digital reader - the iPod of books. Music was dominated by Apple's head start, and video was non-existent with high barriers(e.g., rights and downloads speeds). So large focus on books with much smaller teams for music and video.
+    - Doubts on Hardware: Many board members and leaders were against the idea; Amazon was a software company, so should stick to what it knows and partner with a third party for hardware. However, repeated convos and PR/FAQs pointed to need for a well-integrated device and shop - A third party brought in customer experience risk, so not right for working backwards. Also, if the long-term success of the company is based on a capability it lacks, then it needs a way to build or buy that capability instead of ceding control of the experience.
+      - More common for companies to outsource for talent when entering a lacked capability, which enables fast early movement but makes the company less flexible for innovation / differentiation over time. Retailers who outsource ecommerce couldn't ideate/test new ideas like Prime Shipping or Fulfillment by Amazon - They were only able to do whatever the outsourced company offered(thus, fast followers at best). Outsourcing in the short-term trades off the ability to actively tweak things as they change.
+    - Hired former VP hardware at Palm, Apple, then purchased Mobipocket(software for reading/viewing e-books) to jumpstart software efforts.
+    - Even knowing that it would take time and money to develop, Kindle was over-consuming by mid-2005, but strategic importance was reinforced from Bezos / S-Team
+  - Kindle Takes Shape
+    - Inspiration from Blackberry, which included constant connectivity and sideloading. Per data, users rarely synced content, hence Whispernet and an on-device store.
+      - Whispernet bumped costs(3g modem, carrier relationship), but substantially improved customer experience.
+    - e-ink invented in '97 but had no commerical applications in 2005, but key to "getting out of the way" of reader experience: Great battery life, paper-like, great visibility in the sun.
+    - Selection was a challenge, but Amazon had already invested in a Look Inside featurea, hence had already worked with publishers to digitize. Launched with 90k titles vs Sony's 20k.
+    - Device and e-book pricing were aggressive(near wholesale) to drive adoption, early returns were not great, but viewed as strategic initiative.

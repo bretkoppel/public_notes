@@ -185,6 +185,18 @@
     - ConfigMap manifest .yml
     - Accessed via env vars _or_ via a ConfigMap volume
   - Creating
-    - Manifest: .yml, `kind: ConfigMap`, `name` is how it's accessed, `data` has keys/values
-    - Config file: set `foo=bar` pairs in a regular file, then `kubectl create configmap --from-file=...`
-    - Environment(.env) file: looks like config file, but `--from-env-file`
+      - `kubectl create secrete generic [name] --from-literal=foo=bar` or `--from-file=ssh-privatekey=~/.....` or from a key pair `kubectl create secret tls tls-secret --cert=path/to/cert --key=/path/to/key`
+      - What about defining with yaml? The file will only be base64 encoded, so accessible to anybody with access to the file. If needed, `kind: Secret`, `data` with keys and base64 encoded values(`foo: base64(bar)`)
+    - Using
+      - `kubectl get secrets`(or with `-o yaml`)
+      - Accessible via env vars or file maps, just like ConfigMaps
+      - `... valueFrom: secretKeyRef...` to map into Pod
+- Putting it Together
+  - See https://github.com/DanWahlin/CodeWithDanDockerServices
+  - sample app: nginx as reverse proxy -> node.js app -> MongoDB + Redis
+  - Both Redis and Mongo deployed into k8s(e.g., for Mongo, a StatefulSet / PVC is used for persistence)
+  - Troubleshooting
+    - `kubectl logs [pod-name]`, `kubectl logs [pod-name] -c [container-name]`, `kubectl logs -p [pod-name]`(for a Pod no longer running), `kubectl logs -f [pod-name]`(stream logs)
+    - `kubectl describe pod [pod-name]`, `kubectl get pod [pod-name] -o yaml` or `kubectl get deployment [deployment-name] -o yaml`(to get all details including image, ip, etc)
+    - `kubectl exec [pod-name] -it sh` to get a shell
+    - e.g.,  `CreateContainerConfigError` -> `kubectl get pod...` -> Shows state "Password not found"(also in `describe`)

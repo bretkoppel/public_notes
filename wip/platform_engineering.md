@@ -47,7 +47,7 @@
 
 - Having hired more people in infra, tools, DevOps, SRE spaces but still unable to keep up with new complexity. App devs become less productive. Platform to manage complexity sounds great... But building platforms takes significant investment: Costs to build and support them, overhead associated with limiting app dev teams' choices. Additional potential org cost if you need to re-org, change roles, and roll out the new focus.
 
-### Limiting Primitives While Minitmizing Overhead
+### Limiting Primitives While Minimizing Overhead
 
 - Explosion of choice _has_ allowed devs to ship more quickly with more autonomy and ownership over their systems. These benefits are often forgotten as companies look to reduce support burden and long-term costs from diversity of choices. Instead, leadership appeals to authority: DBREs are experts in databases, so they have a natural right to choose app databases; Architects decide on software tools and packages; CTO decides everything. These experts will tend to struggle to understand biz needs well enough to make optimal choices over time, so app teams will suffer.
 - Platform engineering recognizes that app teams should have systems they enjoy using provided by teams that are responsive to them as customers, not just focused on cost reduction or their own support burden. Instead of authority-driven standards, platform eng takes a customer-focused product approach that curates a small set of primitives that meet a broad range of reqs. Requires compromises in light of biz realities, incremental delivery of good platform arch, willingness to partner directly with app teams and listen to what they need. When done well, should yield demonstrated leverage of using platform-provided offerings rather than authority-driven choices.
@@ -286,3 +286,60 @@
 ### Keep It Fun!
 
 - By the time you get to this transition, there's often an us-versus-them mentality between infra and app eng. Try to make it fun: Get feedback from users about what they love; share kudos as they come in, celebrate improvements in customer satisfaction metrics, and make sure to include platform teams in celebrations where their work enables an app team. Be positive. Similar to devops transition, where engineers learn not to throw their code over the wall to an ops team.
+
+# Chapter 4: Building Great Platform Teams
+
+## The Risks of Single-Focus Platform Teams
+
+- Assertion from Ch 1: When the responsibility for platforms is assigned to teams with a narrow focus or skill set, the result tends to be that not enough platforms get created, thus the over-general swamp. Common single-focus team issues:
+
+### Too Much Systems Focus
+
+- Team is skewed toward infra / devops / SRE / system engineering.
+  - Pros: Operationally excellent. They know their systems inside and out and understand their uptime responsibilities. Leadership is often very involved, will be on incident calls. By following day, will have Prod mitigation; Incident review finished; longer-term fix plan.
+  - Cons: Team will mainly build automation, templating, and one-off tools. Will not build complexity-managing platform abstractions or better architectures to solve problems for good. Because they can't change the system, they are often rules and process-driven with plenty of docs. Users tend to run afoul of these rules. Team management consistently requires customer teams to do one-off work that the platform team is incapable of streamlining.
+  - Why they are stuck: Both leadership and engineers will tend to hire experienced systems people who are already strong operationally and have directly relevant system knowledge. Interviews will emphasize book knowledge, manual knowledge, but little software eng knowledge. Software engineers - the ones who could bring better abstractions and shift operational load - are disincentivized and people who lean that direction are isolated and likely to move on, reinforcing the idea that they are poor culture fits.
+
+### Too Much Development Focus
+
+- Team is skewed toward software engineers and software EMs. They write lots of code and have for a long time, but have spent little time developing platforms or infra.
+  - Pros: Teams are builders, sharp eye on platform arch, technologies, and what comes next. Focused on "golden paths", "vNext" that will fix flaws of current platform... and would, given infinite time to implement.
+  - Cons: "Technical debt is any code some other engineers wrote." Frustrated by work that isn't focused on building a newer, better system; view work on old systems as throwaway. These teams overlook the frustration and low productivity of the current system users, which grows as the team's project estimates blow out. While building the new system, view old systems as curiosities to be carefully poked rather than fully understood, thus leading to operational problems. Teams tend to be less operationally aware(e.g., for overnight pages).
+  - Why they are stuck: Industry has favored delivering new code as a key metric for compensation / promotions, and the engineers who were promoted for this have now gone into management, so new hires are also evaluated on e.g., toy algorithm interview problems vs practical ability. Managers who do value this balance may accept the hires but only for if they aren't distracting those undertaking the important work of real development - e.g., shouldering operational load.
+
+## The Different Roles of Platform Engineers
+
+- Unsticking single-focus teams requires equally valuing both types of work, needs new roles. Systems vs Software split focuses on how the sides differ rather than on how their roles relate. On software side, misses that various aspects of the role are different on a platform team. On systems side, there are many roles / titles, simplify down to three:
+  - Systems Engineer: A systems generalist, traditional DevOps.
+  - Reliability Engineer: Has de-emphasized systems engineering for deep focus on reliability.
+  - Systems Specialist: Linux engineer; Performance engineer; Network engineer; etc.
+
+### Software Engineer Role
+
+- Mostly back-end focused with some specific traits:
+  - Drawn to understanding systems: Strong desire to understand the interaction of their code and the underlying systems it runs on. Interested in how code fits into ecosystem of software, hardware, networking, distributed systems, etc. Tend to want to read code of libraries they depend on, dig into failures that happen at application edges. Think about systems more broadly than feature-by-feature so that they can operate and support their code in Production.
+  - Comfortable with on-call for critical systems: Most platforms are staffed such that experts will need to be part of rotation, used to handling biz impact issues with ambiguous causes. Many software eng love details at design time but don't view it as something to draw on during a call. Often unfamiliar with Unix skills, low communication skills, uncomfortable under time pressure, etc. These will struggle as part of a platform team. Identify successful candidates based on whether and how they engage during incidents(i.e., do they engage and speed up remediation). In interviews, ask about the largest incident in which the candidate had a significant role in remediation.
+  - Comfortable shipping at deliberate pace: Platform engineers will spend lots of time not writing code(operations; integrations; experimentation). Large costs to platform mistakes in both operational risk and the risk of being stuck supporting features that are much more expensive to maintain than they were to create. Engineers who are motivated by novelty and feature turn-around("pioneers") may not be a great fit for a mature platform team.
+
+### Systems Engineer Role
+
+- Focused on understanding systems but use that focus broadly rather than digging deep on a single specialty(Linux, performance, networking, etc). Less depth but higher desire to understand relationships with better systems knowledge than most software engineers. Focus on automation, particularly for infra integration, scaling, reliability, observability. These skills can be used for building platform features that take a lot of knowledge to get right. Lots of crossover with DevOps, SRE but culturally we eschew these titles to keep the focus on building platform features rather than just the platform's automation or reliability.
+- Shine most in using knowledge to resolve deep systems issues that involved both the platform codebase and underlying deps(e.g., issues that are operational and would stump pure software engineers for months). Along with operational debugging, able to spot optimization wins in e.g., OSS configuration, where software engineers are convinced they'll need lengthy rewrites.
+- Why hire/reward the generalist rather than hiring specialists?
+  - Specialization tends to take time, so limited to Sr roles
+  - Strong systems engineers will feel need to specialize to get promoted, so team will lose breadth that is key to platform contributions.
+  - Don't want too many specialists, but need broad systems engineers.
+
+### Reliability Engineer Role
+
+- SRE isn't all the systems work that isn't feature-based "software dev". Google itself split into two sub-roles, Software Engineer and Systems Engineer, sharing culture but with different roles.
+- In this context, Reliablity Engineer refers to DevOps-ish engineers who are focused on reliability but still maintain broad responsibility. These engineers will excel in SRE practices: Incident management, SLO consults, chaos engineering, game days, production readiness reviews, incident post-mortems, operational meetings. They have strong enough tech depth to implement the technical stuff behind what matters, so theyd rive reliability across sytems.
+- In theory, other engineers could do this on a part-time basis, but few are typically willing. Those who are are systems thinkers who are motivated by the social dimension of a solution("How do we make everyone a little better?").
+  - e.g., Incident management: In an org with teams doing their own on-call rotations, SREs ensure thematic issues are surfaced. Incident can span multiple systems and even if a single team owns all of them, very easy for each person or sub-team to think only about their portion of the issue. Incident manager tracks incidents, alerts Sr Mgmt to unresolved challenges, plans and implements remediations to those challenges. Person should love to focus on big broken things and have the patience to see a project through to completion.
+- Successful candidates often start doing this part-time for their own teams. To scale them out, generally helpful to put them in a focused team that stays close to platform eng team, a core reliability team. To avoid these people being seen as "talkers who have never done it", recommend rotating reliability specialists in and out of platform teams to keep skills current.
+
+### Systems Specialist Role
+
+- At scale, specialists(e.g., Cloud networking; Kernel; Performance; Storage engineer) can be high-leverage, but should be late hires and should be carefully reviewed for positive impact. Platform team cannot just be a mix of specialists.
+- Need an org large enough that the specialization's need is big enough to keep the specialist interested. e.g., If a large part of platform offering revolves around networking management, all of team should understand the network, but must avoid taking this too far and ending up with people too focused on building state-of-the-art ideas in their speciality rather than focused on building what org needs. e.g., dev tools team of version control experts => focus on refining interface to vcs rather than focusing on user-friendly tooling.
+- Specialists may also advocate for something like internal evangelism, where specialists spend time contributing to OSS, conf talks, research, etc. Good for all engineers in moderation, but difficult full-time internally as the engineer will struggle for credibility without having much to demonstrate.

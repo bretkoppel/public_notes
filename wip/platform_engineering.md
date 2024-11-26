@@ -343,3 +343,46 @@
 - At scale, specialists(e.g., Cloud networking; Kernel; Performance; Storage engineer) can be high-leverage, but should be late hires and should be carefully reviewed for positive impact. Platform team cannot just be a mix of specialists.
 - Need an org large enough that the specialization's need is big enough to keep the specialist interested. e.g., If a large part of platform offering revolves around networking management, all of team should understand the network, but must avoid taking this too far and ending up with people too focused on building state-of-the-art ideas in their speciality rather than focused on building what org needs. e.g., dev tools team of version control experts => focus on refining interface to vcs rather than focusing on user-friendly tooling.
 - Specialists may also advocate for something like internal evangelism, where specialists spend time contributing to OSS, conf talks, research, etc. Good for all engineers in moderation, but difficult full-time internally as the engineer will struggle for credibility without having much to demonstrate.
+
+## Hiring and Recognizing Engineers in All Roles
+
+- Software industry tends to reward engineers who ship new code to Production, as this is easier to evaluate. Platforms change more slowly, so Platform Engineers can struggle for recognition. Changing this culture is difficult: Look for positive marginal change, incremental changes based on individual cases that build evidence for bigger long-term changes.
+
+### Allow Role-Specific Titles
+
+- Tempting to link title, level matrix, and interview process directly, but this disregards that a title / specialization signals the employee's role to both coworkers and external stakeholders. Forcing your first kernel eng into the SRE title mis-signals to peers and makes the org feel bureaucratic. Everybody can't have their own title - New titles should have substantial differences to existing roles, and should not need to trigger a new level matrix or interview process.
+
+### Avoid Creating a New Software Engineer Level Matrix
+
+- Platform Software Engineers are ill-served by traditional job descriptions focusing on new code, systems, and arch, as they will in practice need to move more slowly due to the business criticality of their systems. Creating a Platform Software Engineer level matrix recognizes the difference in skills, but maintaining multiple job ladders gets expensive quickly. As a result, a single ladder that specifies levels by outcomes achieved(vs methods used) may be best choice up to a certain size. This will take iteration.
+- While recalibrating the ladder, better off stretching within the system - Find people outside of Platform Engineering at the next level who can attest to the employee's impact being similar to theirs. Examples: Tools, dashboards, wikis the engineer has created(more adoption the better); quality of customer interactions including clarity, tech depth, responsiveness; contribution to handling and resolving tickets efficiently; post-mortem involvement, ability to coach others in analyzing incidents, ability to propose solutions.
+
+### Have, at Most, One Level Matrix for the Systems Roles
+
+- Single matrix cause problems at scale since platform engineers will generally write less code(e.g., a very senior systems engineer who can't solve an interview coding problem). Review panels remain stuck on new code and systems created. As a result, eventually create a second level matrix for the roles who write less code - but only create _one_ to avoid confusing people due to subtle differences causing difficulties evaluating impact. e.g., Production Engineer matrix; Systems Development Engineer matrix.
+- An existing DevOps or SRE matrix may be a good starting point.
+
+### If Needed, Create a New Software Engineer Interview Process
+
+- Interviews tailored for software engineering pipelines can miss the differences: over-focused on CS knowledge(data structures, algos) vs creating detail-oriented solutions that consider edge cases; focused on choosing platforms vs creating them. Instead:
+  - Traditional coding interview that has a naive/brute-force approach that is open to refinement through algos and data structures. Evaluate candidate both on finding optimized solution and on the details: error handling, testing, etc.
+  - Second coding interview for systems detail. 20m to get code right, 30m of discussion about underlying assumptions. During discussion, test their methodology and their assumptions around real-world factors like testing, observability, scale. e.g., ask how candidate's answer would change if inputs were larger than a single host could handle.
+  - Design interview focused on designing a platform, not an application.
+  - Inverted design interview, where you ask the candidate to dive deep into tech trade-offs of something they have designed and built.
+  - Behavioral/Values interview, focus on operational experience, ability to lead in the face of conflict, empathy with customers.
+- New process means calibration and hands-on management at first. Create small working group to create a set of standard questions, common rubric or red/green flags. Collect interviewers' feedback on how well they think the question evaluated the candidate, present trends to working group. Can take 6 months before confident that early interviewers are well calibrated.
+
+### Vary the Interview Only Slightly for Systems Roles
+
+- Same outline as for platform software engineers with three changes:
+  - Be flexible on design question - focus on the candidate's specialization to determine pass and potential level.
+  - Inverted design interview: Dive into their system depth in their specific role(preferably with a specialist as the interviewer)
+  - Keep the coding interviews, but make it a time-boxed, take-home coding problem. Use the interview to discuss the solution. Often systems engineer will balk at this, but important to building a platform culture vs infra or ops culture.
+
+### Interview for Customer Empathy
+
+- Tendency for platform engineering to develop abrasive relationships with other user groups, treating their problems and opinions with contempt even as those users struggled with problems caused by the platform itself. On Platform Eng side, often point fingers at the past rather than helping user as best they can; on user side, PEBKAC / app engineers may be protected by product/support orgs. Platform engineers who cannot build maturity, empathy, and patience for users - hold their tempers, educate the user, solve the problem - are not suited to building platforms. These engineers affect team reputation and, because they're often "right" in their grievances, can affect the culture of the team.
+- Basic interview qs. Ensure that engineers appreciate they're building things for other humans to consume(i.e., customer empathy).
+  - Tell me about a time when you helped one of your users understand the system.
+  - Tell me about a time when you used customer feedback to change the direction of what you were building.
+  - How do you understand your users in order to figure out whether a new feature or system is interesting or applicable to them?

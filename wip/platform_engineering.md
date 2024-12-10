@@ -386,3 +386,64 @@
   - Tell me about a time when you helped one of your users understand the system.
   - Tell me about a time when you used customer feedback to change the direction of what you were building.
   - How do you understand your users in order to figure out whether a new feature or system is interesting or applicable to them?
+
+## What Makes a Great Platform Engineering Manager?
+
+- EM is often the leader who has the most impact on team culture - Who feels heard, enabled, equally treated.
+
+### Experience Operating Platforms
+
+- Platform Eng involves operational complexity that software eng backgrounds may not appreciate. They may understand the breadth, but not the ill-defined boundaries that allow one failure to cause the rest to fall apart. SoftEng EMs may thus compound problems by encouraging "brilliant" solutions that fail in practice and slow the team down.
+- Customer org EMs come with customer empathy and org relationship-building experience, but again typically have faced less operational complexity. May not value routine operational practices and may underestimate the complexity of the underlying system's problems vs assuming that the engineers have been mismanaged and are immature.
+
+### Experience on Big, Long-Running Projects
+
+- EMs used to "move fast, break things" may be frustrated by slower delivery pace of platform eng. When a lot of people depend on your platform, it is necessarily more critical, and that means you need to make changes slowly and operate with careful thought. Good PlatEng leader will help team deliver quickly AND safely but recognize that PlatEng may think on an order of months and in terms of migrations without disruption/downtime/data loss.
+- Must take criticism related to slower pace and justify it as correct by emphasizing requirements around biz criticality, risk, complexity. In face of one-way "move faster" feedback, must remain focused and continue to have tough discussions with stakeholders.
+
+### Attention to Detail
+
+- Most successful AppEng->PlatEng EMs are detail-oriented sticklers who found motivation in doing project and process management. Mgrs who started in infra/plat teams have better sense of which details matter, better sense of who is able to make proper trade-offs, thus can manage with less process; EMs from other backgrounds may need more tracking, even at the expense of some micro-management. Good EMs should build instinct for when to trust team and when to probe deeply, allowing for less process over time, though(something a true micro-manager struggles with).
+
+## Other Roles on a Platform Team
+
+### Product Managers
+
+- Most PdM orgs tie value to revenue and delivering to external customers, so few PdMs are experienced in platform challenges, thus may take short-term "biz obsession" mindset too far. To address, may source product-minded people from other tech backgrounds... but shouldn't fill the role only with these people - experienced PdMs can train the newbies and calibrate whether they're doing true product mgmt vs program mgmt/scrum leading/tech leading.
+- What if you can't hire PdMs?
+  - Even if you have potential internal candidates, new role may mean lower pay. EMs and Project Mgrs(PjMs) can help, but both come from different focii(EM comms with customer but is focused on execution and may struggle to balance new responsibility). TPMs unused to convos about ambiguous long-term vs short-term trade-offs, tend to treat product problems as execution problems to be scoped, ranked, solved ASAP.
+  - If you can't hire, best move may be Staff Engineers. ~25% are strong two-way communicators invested in the biz who know how to listen to customer feedback; internalize it; and look for incremental solutions even if they take away from the ideal "next big thing." Other 75% may be strong, but lack PdM strengths, so would ideally partner with a PdM.
+
+### Product Owners
+
+- SAFe role, differs from PdM roughly as being a complement to marketing-oriented PdM who emphasizes backlog mgmt, user story diligence. In PlatEng org, customers are internal and marketing needs smaller, thus no need to split role(i.e., PdM should be able to make strategic decisions AND handle mechanics of action).
+
+### Project Managers / Technical Program Managers
+
+- Controversial role: Critics argue that every decision involves big stakeholder meetings and otherwise the job is to harass overworked mgrs and tech leads. This may be driven by conditions rather than role - if execs don't properly prioritize ahead of time, project success is driven by a TPM forcing x-org execution. Avoid by hiring PdMs first, using EMs and Tech Leads to manage small/medium projects.
+- Still, at scale some projects will take 100% of somebody's time to manage. TPMs should be comfy delivering on projects using the processes the org has today rather than blaming those processes for why they can't deliver. At a small org, often means hiring people adept at building bottom-up relationships with engineers and delivering without authority. At big org, hiring people adept at bringing hard decisions to misaligned leadership, collecting details and communicating them upwards.
+
+### Developer Advocates, Tech Writers, Support Engineers
+
+- Highly specialized roles for very large platform eng orgs(> 1000 engineers). Don't hire until PdMs and Engineers can't fill the role - Instead, combat "not my job" attitude to them doing the work and ensure that work is recognized and rewarded, irrespective of whether it's in the job matrix.
+
+## Creating a Platform Engineering Team Culture
+
+### A Platform Split Between a Development and an SRE Team
+
+- Compute platform with complex OSS system at the core, cobbled together by a team of SoftEng with PHDs in systems-related fields. All had been hired on SoftEng interviewing standards(i.e., low operational reqs). Platform team has recently added some systems engineers, but they had been hired into seperate SRE org. The common manager of both was three levels up.
+
+### Strengths and Weaknesses of the Development Team
+
+- Dev team culture believes every problem solveable by growth: Building new functionality in collab with customers to allow them to move to new platform, then later hiring more eng. Didn't worry about broad customer understanding, migration plans aside from "Build it and they will come", improving operational stability of systems, or solving problems through evolution of existing offerings. Resulted in innovative solutions that tackled the OSS system's problems in ways the community hadn't solved yet instead of evaluating whether the OSS was fit for purpose at all. Team's fearlessness in face of unsolved problems helped them deliver big advances without getting bogged down by process. However, new systems suffered from stability problems, and team preferred to solve via new builds instead of understanding and fixing existing infra. Never escaped "pioneer" mode, never interested in day-to-day grind of stability, reliability, iterative improvement. Eventually, deliver and comms suffered, and customers were unhappy because they didn't know when they could expect things would be done. Compounded by separate, under-staffed SRE team, as dev team assumed reliability was their problem.
+
+### Merging the Teams and Adding Product Management
+
+- Merged teams under SRE side with good EM traits and experience operating systems, executing long-running projects, managing stakeholders. New team balanced builder-pioneers with people happy to scale and operate existing things and people who would work closely with customers. Over six months, resulted in operational stability and consolidated prioritization around new features(partly by moving toward roadmap model instead of "one engineer, one feature"). Lost some of the more innovative developers who were purely interested in new things and went elsewhere internally or externally.
+- Found a PdM, but were sensitive to ensuring that Tech Leads and EMs didn't feel undermined by PdM making all decisions.
+
+### Instilling a Platform Engineering Culture
+
+- During moves, leadership consistently reinforced the new culture, even when that meant rebalancing cultural challenges from outside the team(e.g., where some app teams had higher reliability needs than others). Goal was to create PlatEng culture that respected overall company values of innovation and collaboration while balancing with focus on stability and scale.
+- Subteams have their own cultures that diverge from other teams, moreso as company grows. Team cultures reflect where they focus their attention and how they are punished/rewarded, with platform teams tending to be more conservative than prod eng. Must be careful to address any "us vs them" mindset - When pride at running stable systems turns to scorn at prod eng teams who ship broken code, likely to result in poor customer empathy, thus impossible to build a good platform.
+- Spend time recognizing and rewarding different roles and skill sets. Highlight how they contribute to a greater whole. Take time to appreciate partner teams and their work.
